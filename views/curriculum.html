@@ -127,55 +127,93 @@
     <div class="research-section">
       <div class="research-section__intro">
         <h3>Research</h3>
-        <p>Métodos para entender a usuarios y validar decisiones, agrupados por enfoque.</p>
+        <p>
+          Métodos para entender a usuarios y validar decisiones. Cada uno se clasifica por
+          su naturaleza y, cuando corresponde, por la disciplina a la que también pertenece
+          — por ejemplo, Card sorting y Tree testing son a la vez research y arquitectura
+          de información. Filtra para enfocarte en un enfoque a la vez.
+        </p>
       </div>
 
-      <div class="research-group">
-        <h4 class="research-group__title">
-          <i class="fa-solid fa-comments"></i>Métodos cualitativos
-        </h4>
+      <div class="research-filters" role="tablist" aria-label="Filtrar metodologías de research">
+        <button class="filter-chip is-active" data-filter="all" role="tab" aria-selected="true">
+          <i class="fa-solid fa-layer-group"></i>Todos
+        </button>
+        <button class="filter-chip" data-filter="qualitative" role="tab" aria-selected="false">
+          <i class="fa-solid fa-comments"></i>Cualitativo
+        </button>
+        <button class="filter-chip" data-filter="quantitative" role="tab" aria-selected="false">
+          <i class="fa-solid fa-chart-line"></i>Cuantitativo
+        </button>
+        <button class="filter-chip" data-filter="ia" role="tab" aria-selected="false">
+          <i class="fa-solid fa-sitemap"></i>Arquitectura de información
+        </button>
+      </div>
 
-        <article id="metodo-entrevistas" class="research-card">
+      <div class="research-list">
+        <article id="metodo-entrevistas" class="research-card" data-tags="qualitative">
           <i class="fa-solid fa-microphone"></i>
-          <div>
+          <div class="research-card__body">
+            <div class="research-card__tags">
+              <span class="tag tag--qualitative">Cualitativo</span>
+            </div>
             <h5>Entrevistas</h5>
             <p>Conversaciones semiestructuradas para entender motivaciones y contexto.</p>
           </div>
         </article>
 
-        <article id="metodo-card-sorting" class="research-card">
+        <article id="metodo-card-sorting" class="research-card" data-tags="qualitative ia">
           <i class="fa-solid fa-table-cells"></i>
-          <div>
+          <div class="research-card__body">
+            <div class="research-card__tags">
+              <span class="tag tag--qualitative">Cualitativo</span>
+              <span class="tag tag--ia">Arquitectura de información</span>
+            </div>
             <h5>Card sorting</h5>
-            <p>Organización de contenidos por parte de usuarios para definir arquitectura de información.</p>
+            <p>Organización de contenidos por parte de usuarios para definir categorías y jerarquías.</p>
           </div>
         </article>
 
-        <article id="metodo-usability-testing" class="research-card">
+        <article id="metodo-tree-testing" class="research-card" data-tags="quantitative ia">
+          <i class="fa-solid fa-folder-tree"></i>
+          <div class="research-card__body">
+            <div class="research-card__tags">
+              <span class="tag tag--quantitative">Cuantitativo</span>
+              <span class="tag tag--ia">Arquitectura de información</span>
+            </div>
+            <h5>Tree testing</h5>
+            <p>Valida una estructura de navegación ya definida midiendo qué tan fácil es encontrar contenido, sin interfaz visual.</p>
+          </div>
+        </article>
+
+        <article id="metodo-usability-testing" class="research-card" data-tags="qualitative">
           <i class="fa-solid fa-eye"></i>
-          <div>
+          <div class="research-card__body">
+            <div class="research-card__tags">
+              <span class="tag tag--qualitative">Cualitativo</span>
+            </div>
             <h5>Usability testing</h5>
             <p>Observación de usuarios interactuando con un prototipo o producto real.</p>
           </div>
         </article>
-      </div>
 
-      <div class="research-group">
-        <h4 class="research-group__title">
-          <i class="fa-solid fa-chart-line"></i>Métodos cuantitativos
-        </h4>
-
-        <article id="metodo-encuestas" class="research-card">
+        <article id="metodo-encuestas" class="research-card" data-tags="quantitative">
           <i class="fa-solid fa-list-check"></i>
-          <div>
+          <div class="research-card__body">
+            <div class="research-card__tags">
+              <span class="tag tag--quantitative">Cuantitativo</span>
+            </div>
             <h5>Encuestas</h5>
             <p>Recolección de datos a escala para detectar patrones y priorizar hipótesis.</p>
           </div>
         </article>
 
-        <article id="metodo-ab-testing" class="research-card">
+        <article id="metodo-ab-testing" class="research-card" data-tags="quantitative">
           <i class="fa-solid fa-code-compare"></i>
-          <div>
+          <div class="research-card__body">
+            <div class="research-card__tags">
+              <span class="tag tag--quantitative">Cuantitativo</span>
+            </div>
             <h5>A/B Testing</h5>
             <p>Comparación de variantes en producción para medir impacto real en métricas.</p>
           </div>
@@ -459,23 +497,55 @@
     font-size: 0.92rem;
   }
 
-  .research-group {
-    margin-bottom: 1.75rem;
-  }
-
-  .research-group__title {
+  .research-filters {
     display: flex;
-    align-items: center;
     gap: 0.5rem;
-    margin: 0 0 0.85rem;
-    font-size: 1rem;
-    color: var(--text-dim);
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.25rem;
+    -webkit-overflow-scrolling: touch;
   }
 
-  .research-group__title i {
-    color: var(--accent);
+  .filter-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    flex: 0 0 auto;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--text-dim);
+    font-size: 0.82rem;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: color var(--transition), border-color var(--transition),
+      background var(--transition), transform var(--transition);
+  }
+
+  .filter-chip i {
+    font-size: 0.78rem;
+  }
+
+  .filter-chip:hover {
+    color: var(--text);
+    border-color: var(--accent);
+  }
+
+  .filter-chip:active {
+    transform: scale(0.96);
+  }
+
+  .filter-chip.is-active {
+    background: var(--accent);
+    color: var(--bg);
+    border-color: var(--accent);
+  }
+
+  .research-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
   }
 
   .research-card {
@@ -487,14 +557,49 @@
     border: 1px solid var(--border);
     border-radius: var(--radius);
     padding: 1.1rem 1.3rem;
-    margin-bottom: 0.75rem;
     transition: border-color var(--transition), box-shadow var(--transition);
+    animation: fade-in-card 0.25s ease;
+  }
+
+  .research-card.is-hidden {
+    display: none;
   }
 
   .research-card i {
     font-size: 1.2rem;
     color: var(--accent);
     margin-top: 0.2rem;
+  }
+
+  .research-card__tags {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.4rem;
+  }
+
+  .tag {
+    font-size: 0.66rem;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+  }
+
+  .tag--qualitative {
+    background: rgba(110, 168, 254, 0.16);
+    color: var(--accent);
+  }
+
+  .tag--quantitative {
+    background: rgba(255, 180, 90, 0.16);
+    color: #ffb45a;
+  }
+
+  .tag--ia {
+    background: rgba(123, 224, 160, 0.16);
+    color: #7be0a0;
   }
 
   .research-card h5 {
@@ -516,6 +621,11 @@
   @keyframes pulse-target {
     0% { box-shadow: 0 0 0 0 rgba(110, 168, 254, 0.45); }
     100% { box-shadow: 0 0 0 3px var(--accent-soft); }
+  }
+
+  @keyframes fade-in-card {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   /* Responsive */

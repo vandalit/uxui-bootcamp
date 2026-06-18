@@ -34,6 +34,38 @@
     sections.forEach((section) => moduleObserver.observe(section));
   }
 
+  function refreshResearchFilters() {
+    const filterBar = outlet.querySelector(".research-filters");
+    const cards = Array.from(outlet.querySelectorAll(".research-card"));
+    if (!filterBar || !cards.length) return;
+
+    const buttons = Array.from(filterBar.querySelectorAll(".filter-chip"));
+
+    function applyFilter(value) {
+      cards.forEach((card) => {
+        const tags = (card.dataset.tags || "").split(" ");
+        card.classList.toggle("is-hidden", value !== "all" && !tags.includes(value));
+      });
+    }
+
+    function setActiveFilter(value) {
+      buttons.forEach((b) => {
+        const isActive = b.dataset.filter === value;
+        b.classList.toggle("is-active", isActive);
+        b.setAttribute("aria-selected", String(isActive));
+      });
+      applyFilter(value);
+    }
+
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => setActiveFilter(btn.dataset.filter));
+    });
+
+    outlet.querySelectorAll(".phase-chip[href^='#metodo-']").forEach((link) => {
+      link.addEventListener("click", () => setActiveFilter("all"));
+    });
+  }
+
   function moveIndicatorTo(tab) {
     const tabRect = tab.getBoundingClientRect();
     const bannerRect = banner.getBoundingClientRect();
@@ -64,6 +96,7 @@
 
     outlet.innerHTML = html;
     refreshModuleAnchors();
+    refreshResearchFilters();
     outlet.classList.remove("is-leaving");
     outlet.classList.add("is-entering");
 
