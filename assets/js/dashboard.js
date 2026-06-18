@@ -6,6 +6,51 @@
 
   const viewCache = new Map();
   let moduleObserver = null;
+  let modalRoot = null;
+
+  function ensureModal() {
+    if (modalRoot) return modalRoot;
+
+    modalRoot = document.createElement("div");
+    modalRoot.className = "app-modal";
+    modalRoot.innerHTML = `
+      <div class="app-modal__backdrop"></div>
+      <div class="app-modal__panel" role="dialog" aria-modal="true">
+        <button class="app-modal__close" type="button" aria-label="Cerrar">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <h4 class="app-modal__title"></h4>
+        <div class="app-modal__body"></div>
+      </div>
+    `;
+    document.body.appendChild(modalRoot);
+
+    const closeModal = () => modalRoot.classList.remove("is-open");
+    modalRoot.querySelector(".app-modal__backdrop").addEventListener("click", closeModal);
+    modalRoot.querySelector(".app-modal__close").addEventListener("click", closeModal);
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeModal();
+    });
+
+    return modalRoot;
+  }
+
+  function openModal(title, bodyHTML) {
+    const modal = ensureModal();
+    modal.querySelector(".app-modal__title").textContent = title;
+    modal.querySelector(".app-modal__body").innerHTML = bodyHTML;
+    modal.classList.add("is-open");
+  }
+
+  function refreshModalTriggers() {
+    outlet.querySelectorAll("[data-modal-template]").forEach((trigger) => {
+      trigger.addEventListener("click", () => {
+        const template = outlet.querySelector(trigger.dataset.modalTemplate);
+        if (!template) return;
+        openModal(trigger.dataset.modalTitle || "", template.innerHTML);
+      });
+    });
+  }
 
   function refreshModuleAnchors() {
     if (moduleObserver) {
@@ -35,34 +80,43 @@
   }
 
   function refreshResearchFilters() {
-    const filterBar = outlet.querySelector(".research-filters");
-    const cards = Array.from(outlet.querySelectorAll(".research-card"));
-    if (!filterBar || !cards.length) return;
+    const filterBars = Array.from(outlet.querySelectorAll(".research-filters"));
+    if (!filterBars.length) return;
 
-    const buttons = Array.from(filterBar.querySelectorAll(".filter-chip"));
+    const resetters = [];
 
-    function applyFilter(value) {
-      cards.forEach((card) => {
-        const tags = (card.dataset.tags || "").split(" ");
-        card.classList.toggle("is-hidden", value !== "all" && !tags.includes(value));
+    filterBars.forEach((filterBar) => {
+      const scope = filterBar.closest(".research-section") || outlet;
+      const cards = Array.from(scope.querySelectorAll(".research-card"));
+      if (!cards.length) return;
+
+      const buttons = Array.from(filterBar.querySelectorAll(".filter-chip"));
+
+      function applyFilter(value) {
+        cards.forEach((card) => {
+          const tags = (card.dataset.tags || "").split(" ");
+          card.classList.toggle("is-hidden", value !== "all" && !tags.includes(value));
+        });
+      }
+
+      function setActiveFilter(value) {
+        buttons.forEach((b) => {
+          const isActive = b.dataset.filter === value;
+          b.classList.toggle("is-active", isActive);
+          b.setAttribute("aria-selected", String(isActive));
+        });
+        applyFilter(value);
+      }
+
+      buttons.forEach((btn) => {
+        btn.addEventListener("click", () => setActiveFilter(btn.dataset.filter));
       });
-    }
 
-    function setActiveFilter(value) {
-      buttons.forEach((b) => {
-        const isActive = b.dataset.filter === value;
-        b.classList.toggle("is-active", isActive);
-        b.setAttribute("aria-selected", String(isActive));
-      });
-      applyFilter(value);
-    }
-
-    buttons.forEach((btn) => {
-      btn.addEventListener("click", () => setActiveFilter(btn.dataset.filter));
+      resetters.push(() => setActiveFilter("all"));
     });
 
     outlet.querySelectorAll(".phase-chip[href^='#metodo-']").forEach((link) => {
-      link.addEventListener("click", () => setActiveFilter("all"));
+      link.addEventListener("click", () => resetters.forEach((reset) => reset()));
     });
   }
 
@@ -97,6 +151,7 @@
     outlet.innerHTML = html;
     refreshModuleAnchors();
     refreshResearchFilters();
+    refreshModalTriggers();
     outlet.classList.remove("is-leaving");
     outlet.classList.add("is-entering");
 

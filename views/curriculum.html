@@ -40,6 +40,24 @@
       </div>
     </header>
 
+    <!-- Conceptos clave -->
+    <div class="concepts-section">
+      <div class="concepts-section__intro">
+        <h3>Conceptos clave</h3>
+        <p>La filosofía detrás de toda metodología de diseño que vas a recorrer en este módulo.</p>
+      </div>
+
+      <div class="research-list">
+        <article class="research-card">
+          <i class="fa-solid fa-user-check"></i>
+          <div class="research-card__body">
+            <h5>Diseño Centrado en Usuario (DCU)</h5>
+            <p>Enfoque que prioriza las necesidades, el contexto y el feedback de usuarios reales en cada etapa del proceso, en vez de asumir soluciones a priori. Es el principio que subyace a Design Thinking, Doble Diamante, Lean UX y Design Sprint.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+
     <!-- Metodología de diseño -->
     <div class="methodology-section">
       <div class="methodology-section__intro">
@@ -172,23 +190,143 @@
           </div>
         </article>
 
-        <article class="methodology-card methodology-card--medium">
+        <article class="methodology-card methodology-card--wide">
           <header class="methodology-card__header">
             <i class="fa-solid fa-leaf"></i>
             <h4>Lean UX</h4>
           </header>
           <p>
-            Ciclos cortos de pensar - construir - validar, enfocados en hipótesis
-            y MVPs en lugar de entregables exhaustivos.
+            Ciclos cortos de pensar - construir - validar, enfocados en hipótesis y MVPs.
+            El Lean UX Canvas ordena ese pensamiento en 8 preguntas — toca cada celda para ver el detalle.
           </p>
+
+          <div class="canvas-grid">
+            <button class="canvas-cell" type="button" data-modal-title="1. Business Problem" data-modal-template="#tpl-canvas-1">
+              <span class="canvas-cell__index">1</span>
+              <h5>Business Problem</h5>
+            </button>
+            <button class="canvas-cell" type="button" data-modal-title="2. Business Outcomes" data-modal-template="#tpl-canvas-2">
+              <span class="canvas-cell__index">2</span>
+              <h5>Business Outcomes</h5>
+            </button>
+            <button class="canvas-cell" type="button" data-modal-title="3. Users & Customers" data-modal-template="#tpl-canvas-3">
+              <span class="canvas-cell__index">3</span>
+              <h5>Users &amp; Customers</h5>
+            </button>
+            <button class="canvas-cell" type="button" data-modal-title="4. User Outcomes & Benefits" data-modal-template="#tpl-canvas-4">
+              <span class="canvas-cell__index">4</span>
+              <h5>User Outcomes &amp; Benefits</h5>
+            </button>
+            <button class="canvas-cell" type="button" data-modal-title="5. Solutions" data-modal-template="#tpl-canvas-5">
+              <span class="canvas-cell__index">5</span>
+              <h5>Solutions</h5>
+            </button>
+            <button class="canvas-cell" type="button" data-modal-title="6. Hypotheses" data-modal-template="#tpl-canvas-6">
+              <span class="canvas-cell__index">6</span>
+              <h5>Hypotheses</h5>
+            </button>
+            <button class="canvas-cell" type="button" data-modal-title="7. Lo más importante que aprender primero" data-modal-template="#tpl-canvas-7">
+              <span class="canvas-cell__index">7</span>
+              <h5>¿Qué es lo más importante que necesitamos aprender primero?</h5>
+            </button>
+            <button class="canvas-cell" type="button" data-modal-title="8. Mínimo esfuerzo para aprenderlo" data-modal-template="#tpl-canvas-8">
+              <span class="canvas-cell__index">8</span>
+              <h5>¿Cuál es la menor cantidad de trabajo para aprenderlo?</h5>
+            </button>
+          </div>
+
+          <template id="tpl-canvas-1"><p>¿Qué problema de negocio estamos resolviendo, y para quién? Define el problema antes de saltar a soluciones.</p></template>
+          <template id="tpl-canvas-2"><p>¿Cómo sabremos que resolvimos el problema? Las métricas de negocio que esperamos que cambien.</p></template>
+          <template id="tpl-canvas-3"><p>¿Quiénes son los usuarios y clientes afectados por este problema? Sus roles y segmentos.</p></template>
+          <template id="tpl-canvas-4"><p>¿Qué necesitan lograr los usuarios, y qué beneficio obtienen al conseguirlo?</p></template>
+          <template id="tpl-canvas-5"><p>Ideas de producto, funcionalidades o cambios que podrían resolver el problema — todavía sin validar.</p></template>
+          <template id="tpl-canvas-6"><p>Convierte los supuestos anteriores en una hipótesis comprobable: "Creemos que [solución] logrará [resultado] para [usuario], y lo sabremos cuando veamos [métrica]".</p></template>
+          <template id="tpl-canvas-7"><p>Prioriza la suposición más riesgosa de la hipótesis: si está equivocada, el resto del plan se cae.</p></template>
+          <template id="tpl-canvas-8"><p>Diseña el experimento más pequeño y rápido (entrevista, prototipo, MVP) que valide esa suposición riesgosa.</p></template>
         </article>
 
-        <article class="methodology-card methodology-card--regular">
+        <article class="methodology-card methodology-card--wide">
           <header class="methodology-card__header">
             <i class="fa-solid fa-bolt"></i>
             <h4>Design Sprint</h4>
           </header>
-          <p>Proceso acelerado de 5 días para validar una idea antes de construirla.</p>
+          <p>Proceso acelerado de 5 días (Lunes a Viernes) para validar una idea antes de construirla, heredado de prácticas Agile.</p>
+
+          <div class="agile-loop">
+            <span class="agile-loop__step"><i class="fa-solid fa-clipboard-list"></i>Planificar</span>
+            <i class="fa-solid fa-arrow-right agile-loop__arrow"></i>
+            <span class="agile-loop__step"><i class="fa-solid fa-pen-ruler"></i>Diseñar / Construir</span>
+            <i class="fa-solid fa-arrow-right agile-loop__arrow"></i>
+            <span class="agile-loop__step"><i class="fa-solid fa-vial"></i>Probar</span>
+            <i class="fa-solid fa-arrow-right agile-loop__arrow"></i>
+            <span class="agile-loop__step"><i class="fa-solid fa-magnifying-glass"></i>Revisar</span>
+            <i class="fa-solid fa-rotate-left agile-loop__loopback"></i>
+            <span class="agile-loop__label">Iteración continua</span>
+          </div>
+
+          <div class="phase-grid">
+            <div class="phase-card">
+              <span class="phase-card__index">Lunes</span>
+              <h5>Entender</h5>
+              <div class="phase-chip-list">
+                <span class="phase-chip">Mapa del problema</span>
+                <span class="phase-chip">Objetivo a largo plazo</span>
+                <span class="phase-chip">Preguntas del sprint</span>
+              </div>
+            </div>
+
+            <div class="phase-card">
+              <span class="phase-card__index">Martes</span>
+              <h5>Bocetar</h5>
+              <div class="phase-chip-list">
+                <span class="phase-chip">Lightning demos</span>
+                <span class="phase-chip">Sketch de soluciones</span>
+              </div>
+            </div>
+
+            <div class="phase-card">
+              <span class="phase-card__index">Miércoles</span>
+              <h5>Decidir</h5>
+              <div class="phase-chip-list">
+                <span class="phase-chip">Heat map vote</span>
+                <span class="phase-chip">Storyboard</span>
+              </div>
+            </div>
+
+            <div class="phase-card">
+              <span class="phase-card__index">Jueves</span>
+              <h5>Prototipar</h5>
+              <div class="phase-chip-list">
+                <span class="phase-chip">Prototipo realista de alta fidelidad</span>
+              </div>
+            </div>
+
+            <div class="phase-card">
+              <span class="phase-card__index">Viernes</span>
+              <h5>Testear</h5>
+              <div class="phase-chip-list">
+                <span class="phase-chip">5 entrevistas de usabilidad</span>
+                <span class="phase-chip">Aprendizajes y siguientes pasos</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="sprint-cadence">
+            <span class="sprint-chip">
+              <strong>Semana 1 · Sprint 1</strong>
+              Validar concepto
+            </span>
+            <i class="fa-solid fa-arrow-right"></i>
+            <span class="sprint-chip">
+              <strong>Semana 2 · Sprint 2</strong>
+              Validar flujo crítico
+            </span>
+            <i class="fa-solid fa-arrow-right"></i>
+            <span class="sprint-chip">
+              <strong>Semana 3 · Sprint 3</strong>
+              Validar pricing
+            </span>
+          </div>
         </article>
       </div>
     </div>
@@ -1097,6 +1235,26 @@
     margin-bottom: 2rem;
   }
 
+  /* Conceptos clave */
+  .concepts-section {
+    margin-bottom: 3rem;
+  }
+
+  .concepts-section__intro {
+    margin-bottom: 1.25rem;
+  }
+
+  .concepts-section__intro h3 {
+    margin: 0 0 0.4rem;
+  }
+
+  .concepts-section__intro p {
+    margin: 0;
+    color: var(--text-dim);
+    font-size: 0.92rem;
+    max-width: 640px;
+  }
+
   /* Metodología de diseño */
   .methodology-section {
     margin-bottom: 3rem;
@@ -1174,6 +1332,124 @@
     margin: 0;
     color: var(--text-dim);
     font-size: 0.9rem;
+  }
+
+  .methodology-card template {
+    display: none;
+  }
+
+  /* Lean UX Canvas */
+  .canvas-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+  }
+
+  .canvas-cell {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    text-align: left;
+    color: var(--text);
+    font-family: inherit;
+    cursor: pointer;
+    transition: border-color var(--transition), transform var(--transition);
+  }
+
+  .canvas-cell:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  .canvas-cell:active {
+    transform: translateY(0) scale(0.98);
+  }
+
+  .canvas-cell__index {
+    font-size: 0.72rem;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+
+  .canvas-cell h5 {
+    margin: 0;
+    font-size: 0.84rem;
+    font-weight: 600;
+  }
+
+  /* Agile loop (Design Sprint intro) */
+  .agile-loop {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.85rem 1rem;
+  }
+
+  .agile-loop__step {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.82rem;
+    white-space: nowrap;
+  }
+
+  .agile-loop__step i {
+    color: var(--accent);
+  }
+
+  .agile-loop__arrow {
+    color: var(--text-dim);
+    font-size: 0.78rem;
+  }
+
+  .agile-loop__loopback {
+    color: var(--accent);
+    font-size: 0.9rem;
+    margin-left: 0.4rem;
+  }
+
+  .agile-loop__label {
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    white-space: nowrap;
+  }
+
+  /* Sprint cadence (tareas/hitos/semanas/sprints) */
+  .sprint-cadence {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+  }
+
+  .sprint-cadence i {
+    color: var(--text-dim);
+    font-size: 0.78rem;
+  }
+
+  .sprint-chip {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    background: var(--accent-soft);
+    border-radius: 10px;
+    padding: 0.55rem 0.85rem;
+    font-size: 0.78rem;
+    color: var(--text-dim);
+  }
+
+  .sprint-chip strong {
+    color: var(--accent);
+    font-size: 0.78rem;
   }
 
   /* Phase index (mini-bento inside Design Thinking / Doble Diamante wide cards) */
@@ -1558,6 +1834,20 @@
 
     .heuristic-card {
       width: 84vw;
+    }
+
+    .canvas-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .agile-loop,
+    .sprint-cadence {
+      gap: 0.45rem;
+    }
+
+    .agile-loop__step,
+    .agile-loop__label {
+      font-size: 0.76rem;
     }
   }
 </style>
