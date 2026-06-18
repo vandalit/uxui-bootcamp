@@ -44,11 +44,20 @@
 
   function refreshModalTriggers() {
     outlet.querySelectorAll("[data-modal-template]").forEach((trigger) => {
-      trigger.addEventListener("click", () => {
+      const open = () => {
         const template = outlet.querySelector(trigger.dataset.modalTemplate);
         if (!template) return;
         openModal(trigger.dataset.modalTitle || "", template.innerHTML);
-      });
+      };
+      trigger.addEventListener("click", open);
+      if (trigger.tagName !== "BUTTON") {
+        trigger.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            open();
+          }
+        });
+      }
     });
   }
 

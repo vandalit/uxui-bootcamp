@@ -993,7 +993,12 @@
         <h3>Catálogo de artefactos de pantalla</h3>
         <p>
           Qué es cada artefacto, sin ordenarlos por secuencia de construcción —
-          esa cronología vivirá en una vista dedicada a proceso.
+          esa cronología vivirá en una vista dedicada a proceso. Los flujos
+          llevan íconos que distinguen si son <strong>simbólicos</strong> (cajas
+          y rombos de decisión) o de <strong>pantallas</strong>, y si están
+          <strong>acotados</strong> a un flujo puntual o son una vista
+          <strong>general</strong> de rutas — toca cualquier flujo para ver su
+          diagrama de referencia.
         </p>
       </div>
 
@@ -1057,61 +1062,247 @@
           </div>
         </article>
 
-        <article class="research-card" data-tags="flow">
+        <article class="research-card research-card--clickable" data-tags="flow" tabindex="0" role="button" data-modal-title="User flow" data-modal-template="#tpl-flow-user">
           <i class="fa-solid fa-route"></i>
           <div class="research-card__body">
             <div class="research-card__tags">
               <span class="tag tag--flow">Flujo</span>
             </div>
+            <div class="flow-badges">
+              <span class="flow-badge" title="Simbólico"><i class="fa-solid fa-shapes"></i></span>
+              <span class="flow-badge" title="Acotado a un flujo"><i class="fa-solid fa-crop-simple"></i></span>
+            </div>
             <h5>User flow</h5>
             <p>Camino que sigue un usuario a través de decisiones y pantallas para cumplir un objetivo.</p>
           </div>
+          <i class="fa-solid fa-up-right-and-down-left-from-center research-card__expand"></i>
         </article>
 
-        <article class="research-card" data-tags="flow">
+        <article class="research-card research-card--clickable" data-tags="flow" tabindex="0" role="button" data-modal-title="Task flow" data-modal-template="#tpl-flow-task">
           <i class="fa-solid fa-list-ol"></i>
           <div class="research-card__body">
             <div class="research-card__tags">
               <span class="tag tag--flow">Flujo</span>
             </div>
+            <div class="flow-badges">
+              <span class="flow-badge" title="Simbólico"><i class="fa-solid fa-shapes"></i></span>
+              <span class="flow-badge" title="Acotado a una tarea"><i class="fa-solid fa-crop-simple"></i></span>
+            </div>
             <h5>Task flow</h5>
             <p>Secuencia lineal de pasos para completar una tarea específica, sin ramificaciones de decisión.</p>
           </div>
+          <i class="fa-solid fa-up-right-and-down-left-from-center research-card__expand"></i>
         </article>
 
-        <article class="research-card" data-tags="flow">
+        <article class="research-card research-card--clickable" data-tags="flow" tabindex="0" role="button" data-modal-title="UI flow" data-modal-template="#tpl-flow-ui">
           <i class="fa-solid fa-diagram-project"></i>
           <div class="research-card__body">
             <div class="research-card__tags">
               <span class="tag tag--flow">Flujo</span>
             </div>
+            <div class="flow-badges">
+              <span class="flow-badge" title="De pantallas"><i class="fa-solid fa-display"></i></span>
+              <span class="flow-badge" title="General — todo el sitio"><i class="fa-solid fa-sitemap"></i></span>
+            </div>
             <h5>UI flow</h5>
             <p>Mapa de pantallas y sus transiciones, mostrando cómo se conecta la interfaz completa.</p>
           </div>
+          <i class="fa-solid fa-up-right-and-down-left-from-center research-card__expand"></i>
         </article>
 
-        <article class="research-card" data-tags="flow">
+        <article class="research-card research-card--clickable" data-tags="flow" tabindex="0" role="button" data-modal-title="Wireflow" data-modal-template="#tpl-flow-wireflow">
           <i class="fa-solid fa-layer-group"></i>
           <div class="research-card__body">
             <div class="research-card__tags">
               <span class="tag tag--flow">Flujo</span>
             </div>
+            <div class="flow-badges">
+              <span class="flow-badge" title="De pantallas (baja fidelidad)"><i class="fa-solid fa-display"></i></span>
+              <span class="flow-badge" title="Acotado a un flujo"><i class="fa-solid fa-crop-simple"></i></span>
+            </div>
             <h5>Wireflow</h5>
             <p>Híbrido entre wireframe y diagrama de flujo: pantallas de baja fidelidad conectadas por su lógica de navegación.</p>
           </div>
+          <i class="fa-solid fa-up-right-and-down-left-from-center research-card__expand"></i>
         </article>
 
-        <article class="research-card" data-tags="flow">
+        <article class="research-card research-card--clickable" data-tags="flow" tabindex="0" role="button" data-modal-title="Storyboard" data-modal-template="#tpl-flow-storyboard">
           <i class="fa-solid fa-film"></i>
           <div class="research-card__body">
             <div class="research-card__tags">
               <span class="tag tag--flow">Flujo</span>
             </div>
+            <div class="flow-badges">
+              <span class="flow-badge" title="Narrativo, sin pantallas"><i class="fa-solid fa-film"></i></span>
+              <span class="flow-badge" title="Acotado a un contexto"><i class="fa-solid fa-crop-simple"></i></span>
+            </div>
             <h5>Storyboard</h5>
             <p>Secuencia narrativa e ilustrada del contexto y la experiencia de un usuario antes de llegar a la pantalla.</p>
           </div>
+          <i class="fa-solid fa-up-right-and-down-left-from-center research-card__expand"></i>
         </article>
       </div>
+
+      <template id="tpl-flow-user">
+        <svg viewBox="0 0 280 120" class="flow-diagram" role="img" aria-label="Diagrama simbólico de user flow con nodo de decisión y dos ramas">
+          <defs>
+            <marker id="arrow-user" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 z" fill="var(--accent)"></path>
+            </marker>
+          </defs>
+          <circle cx="24" cy="60" r="12" fill="var(--surface-raised)" stroke="var(--accent)" stroke-width="2.5"></circle>
+          <line x1="36" y1="60" x2="68" y2="60" stroke="var(--accent)" stroke-width="2.5" marker-end="url(#arrow-user)"></line>
+          <polygon points="95,38 118,60 95,82 72,60" fill="var(--surface-raised)" stroke="var(--accent)" stroke-width="2.5"></polygon>
+          <line x1="112" y1="48" x2="150" y2="28" stroke="var(--accent)" stroke-width="2.5" marker-end="url(#arrow-user)"></line>
+          <line x1="112" y1="72" x2="150" y2="92" stroke="var(--accent)" stroke-width="2.5" marker-end="url(#arrow-user)"></line>
+          <rect x="152" y="14" width="56" height="28" rx="6" fill="var(--surface-raised)" stroke="var(--accent)" stroke-width="2.5"></rect>
+          <rect x="152" y="78" width="56" height="28" rx="6" fill="var(--surface-raised)" stroke="var(--accent)" stroke-width="2.5"></rect>
+          <line x1="208" y1="28" x2="240" y2="55" stroke="var(--accent)" stroke-width="2.5" marker-end="url(#arrow-user)"></line>
+          <line x1="208" y1="92" x2="240" y2="65" stroke="var(--accent)" stroke-width="2.5" marker-end="url(#arrow-user)"></line>
+          <circle cx="252" cy="60" r="12" fill="var(--surface-raised)" stroke="var(--accent)" stroke-width="2.5"></circle>
+          <path d="M88,10 h22 a4,4 0 0 1 4,4 v8 a4,4 0 0 1 -4,4 h-10 l-4,6 v-6 h-8 a4,4 0 0 1 -4,-4 v-8 a4,4 0 0 1 4,-4 z" fill="var(--surface)" stroke="var(--text-dim)" stroke-width="1.5"></path>
+        </svg>
+        <div class="flow-meta">
+          <span class="flow-meta__item"><i class="fa-solid fa-shapes"></i>Simbólico</span>
+          <span class="flow-meta__item"><i class="fa-solid fa-crop-simple"></i>Acotado a un flujo</span>
+          <span class="flow-meta__item"><i class="fa-solid fa-comment-dots"></i>Admite anotaciones</span>
+        </div>
+        <p>Diagrama simbólico: cajas y rombos de decisión, no pantallas reales. Traza un objetivo puntual (ej. "completar una compra") con sus bifurcaciones lógicas; suele incluir comentarios aclarando reglas de negocio en cada decisión.</p>
+      </template>
+
+      <template id="tpl-flow-task">
+        <svg viewBox="0 0 280 120" class="flow-diagram" role="img" aria-label="Diagrama simbólico lineal de task flow sin decisiones">
+          <defs>
+            <marker id="arrow-task" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 z" fill="var(--accent)"></path>
+            </marker>
+          </defs>
+          <rect x="10" y="46" width="50" height="28" rx="6" fill="var(--surface-raised)" stroke="var(--accent)" stroke-width="2.5"></rect>
+          <line x1="60" y1="60" x2="86" y2="60" stroke="var(--accent)" stroke-width="2.5" marker-end="url(#arrow-task)"></line>
+          <rect x="88" y="46" width="50" height="28" rx="6" fill="var(--surface-raised)" stroke="var(--accent)" stroke-width="2.5"></rect>
+          <line x1="138" y1="60" x2="164" y2="60" stroke="var(--accent)" stroke-width="2.5" marker-end="url(#arrow-task)"></line>
+          <rect x="166" y="46" width="50" height="28" rx="6" fill="var(--surface-raised)" stroke="var(--accent)" stroke-width="2.5"></rect>
+          <line x1="216" y1="60" x2="242" y2="60" stroke="var(--accent)" stroke-width="2.5" marker-end="url(#arrow-task)"></line>
+          <rect x="244" y="46" width="30" height="28" rx="14" fill="var(--surface-raised)" stroke="var(--accent)" stroke-width="2.5"></rect>
+        </svg>
+        <div class="flow-meta">
+          <span class="flow-meta__item"><i class="fa-solid fa-shapes"></i>Simbólico</span>
+          <span class="flow-meta__item"><i class="fa-solid fa-crop-simple"></i>Acotado a una tarea</span>
+          <span class="flow-meta__item"><i class="fa-solid fa-arrow-right-long"></i>Sin decisiones</span>
+        </div>
+        <p>Igual de simbólico que el user flow, pero estrictamente lineal: una sola ruta, sin rombos de decisión ni ramas alternativas. Sirve para una tarea acotada, no para todo un objetivo.</p>
+      </template>
+
+      <template id="tpl-flow-ui">
+        <svg viewBox="0 0 280 140" class="flow-diagram" role="img" aria-label="Mapa de pantallas con múltiples rutas, vista general del sitio">
+          <defs>
+            <marker id="arrow-ui" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 z" fill="var(--accent)"></path>
+            </marker>
+          </defs>
+          <line x1="70" y1="33" x2="110" y2="28" stroke="var(--accent)" stroke-width="2" marker-end="url(#arrow-ui)"></line>
+          <line x1="160" y1="28" x2="200" y2="33" stroke="var(--accent)" stroke-width="2" marker-end="url(#arrow-ui)"></line>
+          <line x1="45" y1="51" x2="45" y2="85" stroke="var(--accent)" stroke-width="2" marker-end="url(#arrow-ui)"></line>
+          <line x1="135" y1="46" x2="135" y2="90" stroke="var(--accent)" stroke-width="2" marker-end="url(#arrow-ui)"></line>
+          <line x1="225" y1="51" x2="225" y2="85" stroke="var(--accent)" stroke-width="2" marker-end="url(#arrow-ui)"></line>
+          <line x1="70" y1="103" x2="110" y2="103" stroke="var(--accent)" stroke-width="2" marker-end="url(#arrow-ui)"></line>
+          <line x1="160" y1="103" x2="200" y2="103" stroke="var(--accent)" stroke-width="2" marker-end="url(#arrow-ui)"></line>
+          <line x1="135" y1="28" x2="225" y2="85" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="3 3" marker-end="url(#arrow-ui)"></line>
+          <g fill="var(--surface-raised)" stroke="var(--accent)" stroke-width="2">
+            <rect x="20" y="15" width="50" height="36" rx="4"></rect>
+            <rect x="110" y="10" width="50" height="36" rx="4"></rect>
+            <rect x="200" y="15" width="50" height="36" rx="4"></rect>
+            <rect x="20" y="85" width="50" height="36" rx="4"></rect>
+            <rect x="110" y="90" width="50" height="36" rx="4"></rect>
+            <rect x="200" y="85" width="50" height="36" rx="4"></rect>
+          </g>
+          <g stroke="var(--accent)" stroke-width="2">
+            <line x1="24" y1="23" x2="66" y2="23"></line>
+            <line x1="114" y1="18" x2="156" y2="18"></line>
+            <line x1="204" y1="23" x2="246" y2="23"></line>
+            <line x1="24" y1="93" x2="66" y2="93"></line>
+            <line x1="114" y1="98" x2="156" y2="98"></line>
+            <line x1="204" y1="93" x2="246" y2="93"></line>
+          </g>
+        </svg>
+        <div class="flow-meta">
+          <span class="flow-meta__item"><i class="fa-solid fa-display"></i>De pantallas</span>
+          <span class="flow-meta__item"><i class="fa-solid fa-sitemap"></i>General — todo el sitio</span>
+          <span class="flow-meta__item"><i class="fa-solid fa-route"></i>Muestra múltiples rutas</span>
+        </div>
+        <p>Diagrama de pantallas reales (no símbolos abstractos): mapea cómo se conecta toda la interfaz, mostrando varias rutas posibles entre secciones — la línea punteada marca una ruta alternativa menos frecuente.</p>
+      </template>
+
+      <template id="tpl-flow-wireflow">
+        <svg viewBox="0 0 280 120" class="flow-diagram" role="img" aria-label="Wireflow: pantallas de baja fidelidad conectadas en secuencia, con una anotación">
+          <defs>
+            <marker id="arrow-wireflow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 z" fill="var(--accent)"></path>
+            </marker>
+          </defs>
+          <g fill="var(--surface-raised)" stroke="var(--accent)" stroke-width="2">
+            <rect x="14" y="30" width="64" height="60" rx="4"></rect>
+            <rect x="108" y="30" width="64" height="60" rx="4"></rect>
+            <rect x="202" y="30" width="64" height="60" rx="4"></rect>
+          </g>
+          <g stroke="var(--text-dim)" stroke-width="1.6">
+            <line x1="20" y1="40" x2="72" y2="40"></line>
+            <line x1="20" y1="52" x2="60" y2="52"></line>
+            <line x1="20" y1="62" x2="68" y2="62"></line>
+            <line x1="114" y1="40" x2="166" y2="40"></line>
+            <line x1="114" y1="52" x2="150" y2="52"></line>
+            <line x1="114" y1="62" x2="160" y2="62"></line>
+            <line x1="208" y1="40" x2="260" y2="40"></line>
+            <line x1="208" y1="52" x2="244" y2="52"></line>
+            <line x1="208" y1="62" x2="254" y2="62"></line>
+          </g>
+          <line x1="78" y1="60" x2="106" y2="60" stroke="var(--accent)" stroke-width="2.5" marker-end="url(#arrow-wireflow)"></line>
+          <line x1="172" y1="60" x2="200" y2="60" stroke="var(--accent)" stroke-width="2.5" marker-end="url(#arrow-wireflow)"></line>
+          <path d="M126,8 h28 a4,4 0 0 1 4,4 v10 a4,4 0 0 1 -4,4 h-12 l-5,7 v-7 h-11 a4,4 0 0 1 -4,-4 v-10 a4,4 0 0 1 4,-4 z" fill="var(--surface)" stroke="var(--text-dim)" stroke-width="1.5"></path>
+        </svg>
+        <div class="flow-meta">
+          <span class="flow-meta__item"><i class="fa-solid fa-display"></i>De pantallas (baja fidelidad)</span>
+          <span class="flow-meta__item"><i class="fa-solid fa-crop-simple"></i>Acotado a un flujo</span>
+          <span class="flow-meta__item"><i class="fa-solid fa-comment-dots"></i>Admite anotaciones</span>
+        </div>
+        <p>Pantallas reales de baja fidelidad conectadas por su lógica de navegación, acotadas a un flujo específico. Es habitual que la misma pantalla se repita en distintos wireflows si participa en más de un flujo.</p>
+      </template>
+
+      <template id="tpl-flow-storyboard">
+        <svg viewBox="0 0 280 110" class="flow-diagram" role="img" aria-label="Storyboard: secuencia narrativa ilustrada en paneles, sin pantallas reales">
+          <g fill="var(--surface-raised)" stroke="var(--accent)" stroke-width="2">
+            <rect x="10" y="14" width="74" height="82" rx="3"></rect>
+            <rect x="103" y="14" width="74" height="82" rx="3"></rect>
+            <rect x="196" y="14" width="74" height="82" rx="3"></rect>
+          </g>
+          <g stroke="var(--text-dim)" stroke-width="2" fill="none" stroke-linecap="round">
+            <line x1="16" y1="84" x2="78" y2="84"></line>
+            <circle cx="40" cy="50" r="7"></circle>
+            <line x1="40" y1="57" x2="40" y2="76"></line>
+            <line x1="40" y1="62" x2="30" y2="70"></line>
+            <line x1="40" y1="62" x2="50" y2="70"></line>
+
+            <line x1="109" y1="84" x2="171" y2="84"></line>
+            <circle cx="133" cy="50" r="7"></circle>
+            <line x1="133" y1="57" x2="133" y2="76"></line>
+            <line x1="133" y1="62" x2="120" y2="55"></line>
+            <line x1="133" y1="62" x2="146" y2="68"></line>
+
+            <line x1="202" y1="84" x2="264" y2="84"></line>
+            <circle cx="226" cy="50" r="7"></circle>
+            <line x1="226" y1="57" x2="226" y2="76"></line>
+            <line x1="216" y1="68" x2="236" y2="68"></line>
+          </g>
+          <line x1="84" y1="55" x2="101" y2="55" stroke="var(--text-dim)" stroke-width="2" stroke-dasharray="2 3"></line>
+          <line x1="177" y1="55" x2="194" y2="55" stroke="var(--text-dim)" stroke-width="2" stroke-dasharray="2 3"></line>
+        </svg>
+        <div class="flow-meta">
+          <span class="flow-meta__item"><i class="fa-solid fa-film"></i>Narrativo, sin pantallas</span>
+          <span class="flow-meta__item"><i class="fa-solid fa-crop-simple"></i>Acotado a un contexto</span>
+          <span class="flow-meta__item"><i class="fa-solid fa-clock"></i>Secuencia no navegacional</span>
+        </div>
+        <p>No representa pantallas ni navegación: son viñetas ilustradas que cuentan el contexto y la experiencia de un usuario antes (o fuera) de la interfaz, acotadas a la escena que se quiere comunicar.</p>
+      </template>
 
       <div class="view-placeholder view-placeholder--inline">
         <i class="fa-solid fa-route"></i>
@@ -1597,6 +1788,80 @@
     font-size: 1.2rem;
     color: var(--accent);
     margin-top: 0.2rem;
+  }
+
+  .research-card--clickable {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .research-card--clickable:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  .research-card--clickable:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  .research-card__expand {
+    position: absolute;
+    top: 1rem;
+    right: 1.1rem;
+    font-size: 0.78rem !important;
+    color: var(--text-dim) !important;
+    margin-top: 0 !important;
+  }
+
+  .flow-badges {
+    display: flex;
+    gap: 0.35rem;
+    margin: 0.3rem 0 0.5rem;
+  }
+
+  .flow-badge {
+    width: 1.6rem;
+    height: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    color: var(--text-dim);
+    font-size: 0.72rem;
+  }
+
+  .flow-diagram {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    display: block;
+    margin: 0 auto 1rem;
+  }
+
+  .flow-meta {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.85rem;
+  }
+
+  .flow-meta__item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.74rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+  }
+
+  .flow-meta__item i {
+    color: var(--accent);
+    font-size: 0.7rem;
   }
 
   .research-card__tags {
