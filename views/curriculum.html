@@ -1,39 +1,220 @@
 <section class="curriculum">
   <header class="curriculum__intro">
     <h1>Estructura curricular</h1>
-    <p>Vista placeholder — próximamente el detalle de cada módulo, semanas y entregables.</p>
+    <p>Cuatro módulos del programa. Selecciona uno para desplazarte directamente a su contenido.</p>
   </header>
 
-  <div class="curriculum__modules">
-    <article class="module-card">
+  <nav class="curriculum__modules" aria-label="Navegación de módulos">
+    <a class="module-anchor is-current" href="#modulo-ux">
       <i class="fa-solid fa-magnifying-glass-chart"></i>
       <h3>UX</h3>
       <p>Investigación, arquitectura de información, validación.</p>
-    </article>
+    </a>
 
-    <article class="module-card">
+    <a class="module-anchor" href="#modulo-dev">
       <i class="fa-solid fa-code"></i>
       <h3>Desarrollo Web</h3>
       <p>HTML, CSS, JS y fundamentos de integración front-end.</p>
-    </article>
+    </a>
 
-    <article class="module-card">
+    <a class="module-anchor" href="#modulo-ui">
       <i class="fa-solid fa-pen-ruler"></i>
       <h3>UI</h3>
       <p>Sistemas de diseño, visual design, prototipado.</p>
-    </article>
+    </a>
 
-    <article class="module-card">
+    <a class="module-anchor" href="#modulo-proyecto">
       <i class="fa-solid fa-rocket"></i>
       <h3>Proyecto</h3>
       <p>Integración end-to-end de un caso real de producto.</p>
-    </article>
-  </div>
+    </a>
+  </nav>
+
+  <!-- Módulo 1 · UX -->
+  <section id="modulo-ux" class="module-section">
+    <header class="module-section__header">
+      <i class="fa-solid fa-magnifying-glass-chart"></i>
+      <div>
+        <h2>Módulo 1 · UX</h2>
+        <p>Investigación, arquitectura de información y validación con usuarios.</p>
+      </div>
+    </header>
+
+    <!-- Metodología de diseño -->
+    <div class="methodology-section">
+      <div class="methodology-section__intro">
+        <h3>Metodología de diseño</h3>
+        <p>
+          Antes de aplicar cualquier marco hay fases previas de descubrimiento y
+          alineamiento con negocio (a detallar más adelante). Desliza horizontalmente
+          para conocer las metodologías que guían el proceso de diseño.
+        </p>
+      </div>
+
+      <div class="methodology-carousel">
+        <article class="methodology-card methodology-card--wide">
+          <header class="methodology-card__header">
+            <i class="fa-solid fa-lightbulb"></i>
+            <h4>Design Thinking</h4>
+          </header>
+          <p>Marco iterativo centrado en las personas, de empatizar a testear.</p>
+
+          <div class="dt-phases">
+            <div class="dt-phase">
+              <span class="dt-phase__index">01</span>
+              <h5>Empatizar</h5>
+              <a class="phase-chip" href="#metodo-entrevistas">
+                <i class="fa-solid fa-arrow-down"></i>Entrevistas
+              </a>
+            </div>
+
+            <div class="dt-phase">
+              <span class="dt-phase__index">02</span>
+              <h5>Definir</h5>
+              <a class="phase-chip" href="#metodo-card-sorting">
+                <i class="fa-solid fa-arrow-down"></i>Card sorting
+              </a>
+            </div>
+
+            <div class="dt-phase">
+              <span class="dt-phase__index">03</span>
+              <h5>Idear</h5>
+              <a class="phase-chip" href="#metodo-encuestas">
+                <i class="fa-solid fa-arrow-down"></i>Encuestas
+              </a>
+            </div>
+
+            <div class="dt-phase">
+              <span class="dt-phase__index">04</span>
+              <h5>Prototipar</h5>
+              <a class="phase-chip" href="#metodo-usability-testing">
+                <i class="fa-solid fa-arrow-down"></i>Usability testing
+              </a>
+            </div>
+
+            <div class="dt-phase">
+              <span class="dt-phase__index">05</span>
+              <h5>Testear</h5>
+              <a class="phase-chip" href="#metodo-ab-testing">
+                <i class="fa-solid fa-arrow-down"></i>A/B testing
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="methodology-card methodology-card--medium">
+          <header class="methodology-card__header">
+            <i class="fa-solid fa-leaf"></i>
+            <h4>Lean UX</h4>
+          </header>
+          <p>
+            Ciclos cortos de pensar - construir - validar, enfocados en hipótesis
+            y MVPs en lugar de entregables exhaustivos.
+          </p>
+        </article>
+
+        <article class="methodology-card methodology-card--regular">
+          <header class="methodology-card__header">
+            <i class="fa-solid fa-bolt"></i>
+            <h4>Design Sprint</h4>
+          </header>
+          <p>Proceso acelerado de 5 días para validar una idea antes de construirla.</p>
+        </article>
+      </div>
+    </div>
+
+    <!-- Research -->
+    <div class="research-section">
+      <div class="research-section__intro">
+        <h3>Research</h3>
+        <p>Métodos para entender a usuarios y validar decisiones, agrupados por enfoque.</p>
+      </div>
+
+      <div class="research-group">
+        <h4 class="research-group__title">
+          <i class="fa-solid fa-comments"></i>Métodos cualitativos
+        </h4>
+
+        <article id="metodo-entrevistas" class="research-card">
+          <i class="fa-solid fa-microphone"></i>
+          <div>
+            <h5>Entrevistas</h5>
+            <p>Conversaciones semiestructuradas para entender motivaciones y contexto.</p>
+          </div>
+        </article>
+
+        <article id="metodo-card-sorting" class="research-card">
+          <i class="fa-solid fa-table-cells"></i>
+          <div>
+            <h5>Card sorting</h5>
+            <p>Organización de contenidos por parte de usuarios para definir arquitectura de información.</p>
+          </div>
+        </article>
+
+        <article id="metodo-usability-testing" class="research-card">
+          <i class="fa-solid fa-eye"></i>
+          <div>
+            <h5>Usability testing</h5>
+            <p>Observación de usuarios interactuando con un prototipo o producto real.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="research-group">
+        <h4 class="research-group__title">
+          <i class="fa-solid fa-chart-line"></i>Métodos cuantitativos
+        </h4>
+
+        <article id="metodo-encuestas" class="research-card">
+          <i class="fa-solid fa-list-check"></i>
+          <div>
+            <h5>Encuestas</h5>
+            <p>Recolección de datos a escala para detectar patrones y priorizar hipótesis.</p>
+          </div>
+        </article>
+
+        <article id="metodo-ab-testing" class="research-card">
+          <i class="fa-solid fa-code-compare"></i>
+          <div>
+            <h5>A/B Testing</h5>
+            <p>Comparación de variantes en producción para medir impacto real en métricas.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Módulo 2 · Desarrollo Web (placeholder) -->
+  <section id="modulo-dev" class="module-section module-section--placeholder">
+    <div class="view-placeholder">
+      <i class="fa-solid fa-code"></i>
+      <h2>Módulo 2 · Desarrollo Web</h2>
+      <p>Próximamente: contenido detallado de HTML, CSS, JS e integración front-end.</p>
+    </div>
+  </section>
+
+  <!-- Módulo 3 · UI (placeholder) -->
+  <section id="modulo-ui" class="module-section module-section--placeholder">
+    <div class="view-placeholder">
+      <i class="fa-solid fa-pen-ruler"></i>
+      <h2>Módulo 3 · UI</h2>
+      <p>Próximamente: sistemas de diseño, visual design y prototipado.</p>
+    </div>
+  </section>
+
+  <!-- Módulo 4 · Proyecto (placeholder) -->
+  <section id="modulo-proyecto" class="module-section module-section--placeholder">
+    <div class="view-placeholder">
+      <i class="fa-solid fa-rocket"></i>
+      <h2>Módulo 4 · Proyecto</h2>
+      <p>Próximamente: integración end-to-end de un caso real de producto.</p>
+    </div>
+  </section>
 </section>
 
 <style>
   .curriculum__intro {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
 
   .curriculum__intro h1 {
@@ -45,13 +226,20 @@
     margin: 0;
   }
 
+  /* Module nav (anchors) */
   .curriculum__modules {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
+    margin-bottom: 3rem;
+    position: sticky;
+    top: 5.5rem;
+    z-index: 5;
+    background: var(--bg);
+    padding: 0.5rem 0;
   }
 
-  .module-card {
+  .module-anchor {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius);
@@ -59,26 +247,306 @@
     display: flex;
     flex-direction: column;
     gap: 0.6rem;
-    transition: transform var(--transition), border-color var(--transition);
+    text-decoration: none;
+    color: inherit;
+    transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
   }
 
-  .module-card:hover {
+  .module-anchor:hover {
     transform: translateY(-3px);
     border-color: var(--accent);
   }
 
-  .module-card i {
+  .module-anchor:active {
+    transform: translateY(-1px) scale(0.99);
+  }
+
+  .module-anchor.is-current {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-soft);
+  }
+
+  .module-anchor i {
     font-size: 1.5rem;
     color: var(--accent);
   }
 
-  .module-card h3 {
+  .module-anchor h3 {
     margin: 0;
   }
 
-  .module-card p {
+  .module-anchor p {
     margin: 0;
     color: var(--text-dim);
     font-size: 0.9rem;
+  }
+
+  /* Module sections */
+  .module-section {
+    scroll-margin-top: 11rem;
+    margin-bottom: 4rem;
+  }
+
+  .module-section__header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .module-section__header i {
+    font-size: 1.8rem;
+    color: var(--accent);
+    margin-top: 0.2rem;
+  }
+
+  .module-section__header h2 {
+    margin: 0 0 0.3rem;
+  }
+
+  .module-section__header p {
+    margin: 0;
+    color: var(--text-dim);
+  }
+
+  .module-section--placeholder {
+    margin-bottom: 2rem;
+  }
+
+  /* Metodología de diseño */
+  .methodology-section {
+    margin-bottom: 3rem;
+  }
+
+  .methodology-section__intro {
+    margin-bottom: 1.25rem;
+  }
+
+  .methodology-section__intro h3 {
+    margin: 0 0 0.4rem;
+  }
+
+  .methodology-section__intro p {
+    margin: 0;
+    color: var(--text-dim);
+    font-size: 0.92rem;
+    max-width: 640px;
+  }
+
+  .methodology-carousel {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    padding-bottom: 0.75rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .methodology-card {
+    scroll-snap-align: start;
+    flex: 0 0 auto;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    transition: border-color var(--transition);
+  }
+
+  .methodology-card:hover {
+    border-color: var(--accent);
+  }
+
+  .methodology-card--wide {
+    width: clamp(280px, 66%, 680px);
+  }
+
+  .methodology-card--medium {
+    width: clamp(230px, 50%, 480px);
+  }
+
+  .methodology-card--regular {
+    width: clamp(200px, 38%, 360px);
+  }
+
+  .methodology-card__header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .methodology-card__header i {
+    font-size: 1.2rem;
+    color: var(--accent);
+  }
+
+  .methodology-card__header h4 {
+    margin: 0;
+  }
+
+  .methodology-card p {
+    margin: 0;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+  }
+
+  /* Design Thinking phases (mini-bento inside the wide card) */
+  .dt-phases {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 0.6rem;
+  }
+
+  .dt-phase {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .dt-phase__index {
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+
+  .dt-phase h5 {
+    margin: 0;
+    font-size: 0.92rem;
+  }
+
+  .phase-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    align-self: flex-start;
+    background: var(--accent-soft);
+    color: var(--accent);
+    border-radius: 999px;
+    padding: 0.3rem 0.65rem;
+    font-size: 0.74rem;
+    text-decoration: none;
+    transition: transform var(--transition), background var(--transition);
+  }
+
+  .phase-chip:hover {
+    transform: translateY(-1px);
+    background: rgba(110, 168, 254, 0.22);
+  }
+
+  .phase-chip i {
+    font-size: 0.65rem;
+  }
+
+  /* Research */
+  .research-section__intro {
+    margin-bottom: 1.5rem;
+  }
+
+  .research-section__intro h3 {
+    margin: 0 0 0.4rem;
+  }
+
+  .research-section__intro p {
+    margin: 0;
+    color: var(--text-dim);
+    font-size: 0.92rem;
+  }
+
+  .research-group {
+    margin-bottom: 1.75rem;
+  }
+
+  .research-group__title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0 0 0.85rem;
+    font-size: 1rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .research-group__title i {
+    color: var(--accent);
+  }
+
+  .research-card {
+    scroll-margin-top: 11rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.1rem 1.3rem;
+    margin-bottom: 0.75rem;
+    transition: border-color var(--transition), box-shadow var(--transition);
+  }
+
+  .research-card i {
+    font-size: 1.2rem;
+    color: var(--accent);
+    margin-top: 0.2rem;
+  }
+
+  .research-card h5 {
+    margin: 0 0 0.25rem;
+  }
+
+  .research-card p {
+    margin: 0;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+  }
+
+  .research-card:target {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-soft);
+    animation: pulse-target 1.1s ease;
+  }
+
+  @keyframes pulse-target {
+    0% { box-shadow: 0 0 0 0 rgba(110, 168, 254, 0.45); }
+    100% { box-shadow: 0 0 0 3px var(--accent-soft); }
+  }
+
+  /* Responsive */
+  @media (max-width: 680px) {
+    .curriculum__modules {
+      position: static;
+      grid-template-columns: 1fr;
+    }
+
+    .module-anchor {
+      padding: 1.1rem;
+    }
+
+    .methodology-card--wide,
+    .methodology-card--medium,
+    .methodology-card--regular {
+      width: 84vw;
+    }
+
+    .dt-phases {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .module-section,
+    .research-card {
+      scroll-margin-top: 8.5rem;
+    }
+
+    .research-card {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
   }
 </style>

@@ -5,6 +5,34 @@
   const outlet = document.getElementById("view-outlet");
 
   const viewCache = new Map();
+  let moduleObserver = null;
+
+  function refreshModuleAnchors() {
+    if (moduleObserver) {
+      moduleObserver.disconnect();
+      moduleObserver = null;
+    }
+
+    const sections = Array.from(outlet.querySelectorAll(".module-section[id]"));
+    const anchors = Array.from(outlet.querySelectorAll(".module-anchor[href^='#']"));
+    if (!sections.length || !anchors.length) return;
+
+    const anchorByTarget = new Map(
+      anchors.map((a) => [a.getAttribute("href").slice(1), a])
+    );
+
+    moduleObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const anchor = anchorByTarget.get(entry.target.id);
+          if (anchor) anchor.classList.toggle("is-current", entry.isIntersecting);
+        });
+      },
+      { rootMargin: "-35% 0px -55% 0px", threshold: 0 }
+    );
+
+    sections.forEach((section) => moduleObserver.observe(section));
+  }
 
   function moveIndicatorTo(tab) {
     const tabRect = tab.getBoundingClientRect();
@@ -35,6 +63,7 @@
     }
 
     outlet.innerHTML = html;
+    refreshModuleAnchors();
     outlet.classList.remove("is-leaving");
     outlet.classList.add("is-entering");
 
