@@ -107,6 +107,8 @@
               <span class="phase-card__index">03</span>
               <h5>Idear</h5>
               <div class="phase-chip-list">
+                <a class="phase-chip" href="#metodo-hmw"><i class="fa-solid fa-arrow-down"></i>How Might We</a>
+                <a class="phase-chip" href="#metodo-crazy8"><i class="fa-solid fa-arrow-down"></i>Crazy 8s</a>
                 <a class="phase-chip" href="#metodo-concept-testing"><i class="fa-solid fa-arrow-down"></i>Concept testing</a>
                 <a class="phase-chip" href="#metodo-encuestas"><i class="fa-solid fa-arrow-down"></i>Encuestas</a>
               </div>
@@ -171,6 +173,8 @@
               <span class="phase-card__index">03</span>
               <h5>Desarrollar</h5>
               <div class="phase-chip-list">
+                <a class="phase-chip" href="#metodo-hmw"><i class="fa-solid fa-arrow-down"></i>How Might We</a>
+                <a class="phase-chip" href="#metodo-crazy8"><i class="fa-solid fa-arrow-down"></i>Crazy 8s</a>
                 <a class="phase-chip" href="#metodo-concept-testing"><i class="fa-solid fa-arrow-down"></i>Concept testing</a>
                 <a class="phase-chip" href="#metodo-cognitive-walkthrough"><i class="fa-solid fa-arrow-down"></i>Cognitive walkthrough</a>
                 <a class="phase-chip" href="#metodo-encuestas"><i class="fa-solid fa-arrow-down"></i>Encuestas</a>
@@ -360,6 +364,9 @@
         </button>
         <button class="filter-chip" data-filter="synthesis" role="tab" aria-selected="false">
           <i class="fa-solid fa-puzzle-piece"></i>Síntesis
+        </button>
+        <button class="filter-chip" data-filter="ideation" role="tab" aria-selected="false">
+          <i class="fa-solid fa-lightbulb"></i>Ideación
         </button>
       </div>
 
@@ -561,6 +568,28 @@
             </div>
             <h5>HUMUL (High / Medium / Low user)</h5>
             <p>Segmenta usuarios por intensidad de uso a partir de datos de comportamiento, para priorizar a quién diseñar primero.</p>
+          </div>
+        </article>
+
+        <article id="metodo-hmw" class="research-card" data-tags="ideation">
+          <i class="fa-solid fa-question"></i>
+          <div class="research-card__body">
+            <div class="research-card__tags">
+              <span class="tag tag--ideation">Ideación</span>
+            </div>
+            <h5>How Might We (HMW)</h5>
+            <p>Convierte un problema o insight en una pregunta abierta y optimista ("¿Cómo podríamos...?") que invita a generar soluciones, haciendo de puente entre Definir e Idear.</p>
+          </div>
+        </article>
+
+        <article id="metodo-crazy8" class="research-card" data-tags="ideation">
+          <i class="fa-solid fa-bolt-lightning"></i>
+          <div class="research-card__body">
+            <div class="research-card__tags">
+              <span class="tag tag--ideation">Ideación</span>
+            </div>
+            <h5>Crazy 8s</h5>
+            <p>Sketching rápido: 8 ideas distintas en 8 minutos (1 minuto por idea), para generar volumen y romper con la primera solución obvia antes de converger.</p>
           </div>
         </article>
       </div>
@@ -1898,6 +1927,11 @@
   .tag--synthesis {
     background: rgba(190, 140, 255, 0.16);
     color: #c9a6ff;
+  }
+
+  .tag--ideation {
+    background: rgba(255, 214, 90, 0.16);
+    color: #ffd65a;
   }
 
   .tag--low-fi {
