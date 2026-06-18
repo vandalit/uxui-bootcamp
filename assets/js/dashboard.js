@@ -7,6 +7,7 @@
   const viewCache = new Map();
   let moduleObserver = null;
   let modalRoot = null;
+  let activeMainSrc = null;
 
   function ensureModal() {
     if (modalRoot) return modalRoot;
@@ -48,6 +49,27 @@
         const template = outlet.querySelector(trigger.dataset.modalTemplate);
         if (!template) return;
         openModal(trigger.dataset.modalTitle || "", template.innerHTML);
+      };
+      trigger.addEventListener("click", open);
+      if (trigger.tagName !== "BUTTON") {
+        trigger.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            open();
+          }
+        });
+      }
+    });
+  }
+
+  function refreshSubviewTriggers() {
+    outlet.querySelectorAll("[data-subview-src]").forEach((trigger) => {
+      const open = () => {
+        loadSubview(
+          trigger.dataset.subviewSrc,
+          trigger.dataset.subviewLabel || "Volver",
+          trigger.dataset.subviewAnchor || ""
+        );
       };
       trigger.addEventListener("click", open);
       if (trigger.tagName !== "BUTTON") {
@@ -136,14 +158,7 @@
     indicator.style.transform = `translateX(${tabRect.left - bannerRect.left - 5.6}px)`;
   }
 
-  async function loadView(tab) {
-    const src = tab.dataset.src;
-
-    outlet.classList.add("is-leaving");
-    outlet.classList.remove("is-visible");
-
-    await wait(200);
-
+  async function fetchView(src) {
     let html = viewCache.get(src);
     if (!html) {
       try {
@@ -156,11 +171,20 @@
       }
       viewCache.set(src, html);
     }
+    return html;
+  }
+
+  async function renderOutlet(html, afterShow) {
+    outlet.classList.add("is-leaving");
+    outlet.classList.remove("is-visible");
+
+    await wait(200);
 
     outlet.innerHTML = html;
     refreshModuleAnchors();
     refreshResearchFilters();
     refreshModalTriggers();
+    refreshSubviewTriggers();
     outlet.classList.remove("is-leaving");
     outlet.classList.add("is-entering");
 
@@ -168,7 +192,42 @@
       requestAnimationFrame(() => {
         outlet.classList.remove("is-entering");
         outlet.classList.add("is-visible");
+        if (afterShow) afterShow();
       });
+    });
+  }
+
+  async function loadView(tab) {
+    const src = tab.dataset.src;
+    activeMainSrc = src;
+    const html = await fetchView(src);
+    await renderOutlet(html);
+  }
+
+  async function loadSubview(src, returnLabel, returnAnchor) {
+    const returnSrc = activeMainSrc;
+    const html = await fetchView(src);
+    const breadcrumb = `
+      <nav class="subview-breadcrumb">
+        <button class="subview-breadcrumb__back" type="button">
+          <i class="fa-solid fa-arrow-left"></i>Volver a ${returnLabel}
+        </button>
+      </nav>
+    `;
+    await renderOutlet(breadcrumb + html, () => {
+      const backBtn = outlet.querySelector(".subview-breadcrumb__back");
+      if (backBtn) {
+        backBtn.addEventListener("click", () => returnToMain(returnSrc, returnAnchor));
+      }
+    });
+  }
+
+  async function returnToMain(returnSrc, anchor) {
+    const html = await fetchView(returnSrc);
+    await renderOutlet(html, () => {
+      if (!anchor) return;
+      const target = outlet.querySelector(anchor);
+      if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
     });
   }
 

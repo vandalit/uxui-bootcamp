@@ -1,0 +1,229 @@
+<section class="subview">
+  <header class="subview-header">
+    <i class="fa-solid fa-paintbrush"></i>
+    <div>
+      <h2>CSS — lo básico</h2>
+      <p>
+        El lenguaje que define la apariencia visual del HTML — color, tamaño,
+        espaciado, posición — sin tocar el contenido ni el significado de la
+        estructura.
+      </p>
+    </div>
+  </header>
+
+  <div class="concept-grid">
+    <article class="concept-card">
+      <i class="fa-solid fa-bullseye"></i>
+      <h4>Selectores</h4>
+      <p>Apuntan a qué elementos se les aplica un estilo: por etiqueta (<code>p</code>), por clase (<code>.tarjeta</code>) o por id (<code>#hero</code>). La especificidad decide cuál gana si hay conflicto.</p>
+    </article>
+
+    <article class="concept-card">
+      <i class="fa-solid fa-box"></i>
+      <h4>Box model</h4>
+      <p>Todo elemento es una caja: <code>content</code>, rodeado de <code>padding</code>, luego <code>border</code>, luego <code>margin</code>. Entender esta caja explica por qué algo "se mueve" al cambiar un tamaño.</p>
+    </article>
+
+    <article class="concept-card">
+      <i class="fa-solid fa-arrows-left-right"></i>
+      <h4>Flexbox</h4>
+      <p>Layout en <strong>una dimensión</strong> (fila o columna). Ideal para alinear y distribuir elementos dentro de un contenedor — barras de navegación, tarjetas en fila, centrar contenido.</p>
+    </article>
+
+    <article class="concept-card">
+      <i class="fa-solid fa-table-cells"></i>
+      <h4>Grid</h4>
+      <p>Layout en <strong>dos dimensiones</strong> (filas y columnas a la vez). Ideal para maquetar la estructura general de una página o secciones con un patrón regular de celdas.</p>
+    </article>
+
+    <article class="concept-card concept-card--wide">
+      <i class="fa-solid fa-mobile-screen-button"></i>
+      <h4>Media queries</h4>
+      <p>Reglas condicionales — <code>@media (max-width: 680px) { ... }</code> — que aplican estilos distintos según el tamaño de pantalla (u otras características del dispositivo). Son la herramienta técnica detrás del diseño responsive.</p>
+    </article>
+  </div>
+
+  <div class="anatomy-block">
+    <h3>Responsive vs. adaptativo vs. líquido (fluido)</h3>
+    <p class="anatomy-intro">Los tres buscan que un sitio funcione en distintas pantallas, pero resuelven el problema de forma distinta:</p>
+
+    <div class="responsive-compare">
+      <article class="responsive-card">
+        <svg viewBox="0 0 120 70" class="responsive-svg" aria-hidden="true">
+          <rect x="5" y="10" width="110" height="50" rx="3" fill="none" stroke="var(--accent)" stroke-width="2"/>
+          <rect x="15" y="20" width="40" height="30" rx="2" fill="var(--surface-raised)" stroke="var(--accent)" stroke-width="1.5"/>
+          <rect x="65" y="20" width="40" height="30" rx="2" fill="var(--surface-raised)" stroke="var(--accent)" stroke-width="1.5"/>
+        </svg>
+        <h5>Líquido / fluido</h5>
+        <p>Todo se mide en unidades relativas (<code>%</code>, <code>fr</code>). El layout se estira o contrae de forma continua con el ancho de pantalla, sin puntos de quiebre — pero a tamaños extremos puede verse demasiado angosto o demasiado ancho.</p>
+      </article>
+
+      <article class="responsive-card">
+        <svg viewBox="0 0 120 70" class="responsive-svg" aria-hidden="true">
+          <rect x="5" y="8" width="32" height="54" rx="3" fill="var(--surface-raised)" stroke="var(--accent)" stroke-width="2"/>
+          <rect x="44" y="8" width="32" height="54" rx="3" fill="var(--surface-raised)" stroke="var(--accent)" stroke-width="2"/>
+          <rect x="83" y="8" width="32" height="54" rx="3" fill="var(--surface-raised)" stroke="var(--accent)" stroke-width="2"/>
+        </svg>
+        <h5>Adaptativo</h5>
+        <p>Un set fijo de layouts predefinidos (ej. para móvil, tablet, desktop). Al cruzar un punto de quiebre, salta de un diseño fijo a otro — sin estados intermedios entre ellos.</p>
+      </article>
+
+      <article class="responsive-card">
+        <svg viewBox="0 0 120 70" class="responsive-svg" aria-hidden="true">
+          <rect x="5" y="10" width="50" height="50" rx="3" fill="var(--surface-raised)" stroke="var(--accent)" stroke-width="2"/>
+          <rect x="65" y="10" width="50" height="50" rx="3" fill="none" stroke="var(--accent)" stroke-width="2" stroke-dasharray="4 3"/>
+          <path d="M58 35 H62" stroke="var(--accent)" stroke-width="2" marker-end="url(#rc-arrow)"/>
+          <defs>
+            <marker id="rc-arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+              <path d="M0,0 L6,3 L0,6 Z" fill="var(--accent)"/>
+            </marker>
+          </defs>
+        </svg>
+        <h5>Responsive</h5>
+        <p>Combina ambos: usa unidades fluidas dentro de cada rango, <em>y</em> media queries para reorganizar el layout en puntos de quiebre clave. Es el enfoque más usado hoy porque junta lo mejor de los dos anteriores.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  .subview {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .subview-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .subview-header i {
+    font-size: 1.8rem;
+    color: var(--accent);
+    margin-top: 0.2rem;
+  }
+
+  .subview-header h2 {
+    margin: 0 0 0.4rem;
+  }
+
+  .subview-header p {
+    margin: 0;
+    color: var(--text-dim);
+  }
+
+  .concept-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .concept-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.2rem 1.3rem;
+  }
+
+  .concept-card--wide {
+    grid-column: 1 / -1;
+  }
+
+  .concept-card i {
+    font-size: 1.1rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .concept-card h4 {
+    margin: 0 0 0.4rem;
+  }
+
+  .concept-card p {
+    margin: 0;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+  }
+
+  .concept-card code {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.1rem 0.35rem;
+    font-size: 0.85em;
+    color: var(--text);
+  }
+
+  .anatomy-block {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.4rem 1.5rem;
+  }
+
+  .anatomy-block h3 {
+    margin: 0 0 0.6rem;
+  }
+
+  .anatomy-intro {
+    margin: 0 0 1.2rem;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+  }
+
+  .responsive-compare {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .responsive-card {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem 1.1rem;
+  }
+
+  .responsive-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+
+  .responsive-card h5 {
+    margin: 0 0 0.4rem;
+  }
+
+  .responsive-card p {
+    margin: 0;
+    color: var(--text-dim);
+    font-size: 0.85rem;
+  }
+
+  .responsive-card code {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.1rem 0.35rem;
+    font-size: 0.85em;
+    color: var(--text);
+  }
+
+  @media (max-width: 680px) {
+    .concept-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .concept-card--wide {
+      grid-column: auto;
+    }
+
+    .responsive-compare {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

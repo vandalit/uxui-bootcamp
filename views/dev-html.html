@@ -1,0 +1,216 @@
+<section class="subview">
+  <header class="subview-header">
+    <i class="fa-solid fa-code"></i>
+    <div>
+      <h2>HTML — lo básico</h2>
+      <p>
+        El lenguaje de marcado que da estructura y significado al contenido de una
+        página — no su apariencia (eso es CSS) ni su comportamiento (eso es
+        JavaScript).
+      </p>
+    </div>
+  </header>
+
+  <div class="concept-grid">
+    <article class="concept-card">
+      <i class="fa-solid fa-tag"></i>
+      <h4>Etiquetas (tags)</h4>
+      <p>Elementos delimitados por <code>&lt;tag&gt;...&lt;/tag&gt;</code> que envuelven una parte del contenido y le dan un rol: párrafo, título, imagen, enlace.</p>
+    </article>
+
+    <article class="concept-card">
+      <i class="fa-solid fa-sliders"></i>
+      <h4>Atributos</h4>
+      <p>Pares <code>clave="valor"</code> dentro de la etiqueta de apertura que agregan información — por ejemplo <code>href</code> en un enlace o <code>alt</code> en una imagen.</p>
+    </article>
+
+    <article class="concept-card">
+      <i class="fa-solid fa-align-left"></i>
+      <h4>Texto</h4>
+      <p><code>&lt;p&gt;</code> para párrafos. <code>&lt;span&gt;</code> para texto en línea sin significado propio — útil para aplicar estilo a una palabra suelta dentro de una frase.</p>
+    </article>
+
+    <article class="concept-card">
+      <i class="fa-solid fa-heading"></i>
+      <h4>Títulos</h4>
+      <p>Jerarquía <code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code>: define la estructura del documento, no solo el tamaño visual — debería existir un único <code>&lt;h1&gt;</code> por página.</p>
+    </article>
+
+    <article class="concept-card">
+      <i class="fa-solid fa-layer-group"></i>
+      <h4>Clases (class)</h4>
+      <p>Agrupan elementos para aplicarles el mismo estilo o comportamiento. Un elemento puede tener varias clases, y una clase puede repetirse en muchos elementos.</p>
+    </article>
+
+    <article class="concept-card">
+      <i class="fa-solid fa-hashtag"></i>
+      <h4>ID</h4>
+      <p>Identificador único dentro de la página — no se repite. Sirve para anclas (<code>#seccion</code>), referencias puntuales desde JS o relacionar un <code>&lt;label&gt;</code> con su campo.</p>
+    </article>
+
+    <article class="concept-card concept-card--wide">
+      <i class="fa-solid fa-shapes"></i>
+      <h4>Semántica</h4>
+      <p>Usar la etiqueta que mejor describe el propósito del contenido (<code>header</code>, <code>nav</code>, <code>main</code>, <code>article</code>, <code>section</code>, <code>footer</code>) en vez de <code>div</code> genéricos para todo. Mejora accesibilidad (lectores de pantalla entienden la página), SEO y mantenibilidad del código.</p>
+    </article>
+  </div>
+
+  <div class="anatomy-block">
+    <h3>Anatomía de una etiqueta</h3>
+    <div class="anatomy-code">
+      <span class="anatomy-part anatomy-part--tag">&lt;p</span><span class="anatomy-part anatomy-part--attr"> class="intro"</span><span class="anatomy-part anatomy-part--attr"> id="hero-text"</span><span class="anatomy-part anatomy-part--tag">&gt;</span><span class="anatomy-part anatomy-part--content">Hola</span><span class="anatomy-part anatomy-part--tag">&lt;/p&gt;</span>
+    </div>
+    <div class="anatomy-legend">
+      <span class="anatomy-legend__item"><span class="anatomy-dot anatomy-dot--tag"></span>Etiqueta</span>
+      <span class="anatomy-legend__item"><span class="anatomy-dot anatomy-dot--attr"></span>Atributo (clase e id incluidos)</span>
+      <span class="anatomy-legend__item"><span class="anatomy-dot anatomy-dot--content"></span>Contenido</span>
+    </div>
+  </div>
+</section>
+
+<style>
+  .subview {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .subview-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .subview-header i {
+    font-size: 1.8rem;
+    color: var(--accent);
+    margin-top: 0.2rem;
+  }
+
+  .subview-header h2 {
+    margin: 0 0 0.4rem;
+  }
+
+  .subview-header p {
+    margin: 0;
+    color: var(--text-dim);
+  }
+
+  .concept-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .concept-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.2rem 1.3rem;
+  }
+
+  .concept-card--wide {
+    grid-column: 1 / -1;
+  }
+
+  .concept-card i {
+    font-size: 1.1rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .concept-card h4 {
+    margin: 0 0 0.4rem;
+  }
+
+  .concept-card p {
+    margin: 0;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+  }
+
+  .concept-card code {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.1rem 0.35rem;
+    font-size: 0.85em;
+    color: var(--text);
+  }
+
+  .anatomy-block {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.4rem 1.5rem;
+  }
+
+  .anatomy-block h3 {
+    margin: 0 0 1rem;
+  }
+
+  .anatomy-code {
+    font-family: "Courier New", monospace;
+    font-size: 1.05rem;
+    overflow-x: auto;
+    white-space: pre;
+    padding: 0.75rem 0;
+  }
+
+  .anatomy-part--tag {
+    color: var(--accent);
+  }
+
+  .anatomy-part--attr {
+    color: #ffb45a;
+  }
+
+  .anatomy-part--content {
+    color: #7be0a0;
+  }
+
+  .anatomy-legend {
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+  }
+
+  .anatomy-legend__item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+  }
+
+  .anatomy-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .anatomy-dot--tag {
+    background: var(--accent);
+  }
+
+  .anatomy-dot--attr {
+    background: #ffb45a;
+  }
+
+  .anatomy-dot--content {
+    background: #7be0a0;
+  }
+
+  @media (max-width: 680px) {
+    .concept-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .concept-card--wide {
+      grid-column: auto;
+    }
+  }
+</style>

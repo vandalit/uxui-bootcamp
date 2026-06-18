@@ -55,6 +55,30 @@
             <p>Enfoque que prioriza las necesidades, el contexto y el feedback de usuarios reales en cada etapa del proceso, en vez de asumir soluciones a priori. Es el principio que subyace a Design Thinking, Doble Diamante, Lean UX y Design Sprint.</p>
           </div>
         </article>
+
+        <article class="research-card">
+          <i class="fa-solid fa-route"></i>
+          <div class="research-card__body">
+            <h5>¿Qué es una metodología de diseño?</h5>
+            <p>Una secuencia ordenada de fases y métodos para llegar de un problema a una solución validada, en vez de improvisar. No reemplaza el criterio: da una estructura repetible para reducir el riesgo de diseñar algo que nadie necesita. Design Thinking, Doble Diamante, Lean UX y Design Sprint son distintas implementaciones del mismo principio de DCU.</p>
+          </div>
+        </article>
+
+        <article class="research-card">
+          <i class="fa-solid fa-comments"></i>
+          <div class="research-card__body">
+            <h5>Enfoque cualitativo</h5>
+            <p>Busca entender el <em>por qué</em>: motivaciones, contexto y significado detrás del comportamiento de un usuario, a partir de muestras pequeñas (entrevistas, observación). Responde preguntas que un número no puede explicar por sí solo.</p>
+          </div>
+        </article>
+
+        <article class="research-card">
+          <i class="fa-solid fa-chart-line"></i>
+          <div class="research-card__body">
+            <h5>Enfoque cuantitativo</h5>
+            <p>Busca medir el <em>qué</em> y el <em>cuánto</em>: comportamiento agregado en muestras grandes (analítica, encuestas, A/B testing). Da confianza estadística, pero no explica por sí solo las razones detrás del dato — por eso suele combinarse con lo cualitativo.</p>
+          </div>
+        </article>
       </div>
     </div>
 
@@ -770,20 +794,36 @@
       </div>
 
       <div class="methodology-carousel">
-        <article class="methodology-card methodology-card--medium">
+        <article
+          class="methodology-card methodology-card--medium methodology-card--clickable"
+          tabindex="0"
+          role="button"
+          data-subview-src="views/dev-html.html"
+          data-subview-label="Desarrollo Web"
+          data-subview-anchor="#modulo-dev"
+        >
           <header class="methodology-card__header">
             <i class="fa-solid fa-code"></i>
             <h4>HTML semántico</h4>
           </header>
           <p>Estructura de contenido con etiquetas con significado (header, nav, main, article) en vez de divs genéricos.</p>
+          <span class="methodology-card__cta"><i class="fa-solid fa-arrow-right"></i>Ver lo básico de HTML</span>
         </article>
 
-        <article class="methodology-card methodology-card--medium">
+        <article
+          class="methodology-card methodology-card--medium methodology-card--clickable"
+          tabindex="0"
+          role="button"
+          data-subview-src="views/dev-css.html"
+          data-subview-label="Desarrollo Web"
+          data-subview-anchor="#modulo-dev"
+        >
           <header class="methodology-card__header">
             <i class="fa-solid fa-swatchbook"></i>
             <h4>CSS y maquetación</h4>
           </header>
           <p>Box model, Flexbox y Grid a nivel de concepto: cómo se distribuyen y dimensionan los elementos.</p>
+          <span class="methodology-card__cta"><i class="fa-solid fa-arrow-right"></i>Ver lo básico de CSS</span>
         </article>
 
         <article class="methodology-card methodology-card--medium">
@@ -791,7 +831,15 @@
             <i class="fa-solid fa-bolt"></i>
             <h4>JavaScript básico</h4>
           </header>
-          <p>Qué hace interactiva una interfaz: eventos, estados y actualización dinámica del contenido.</p>
+          <p>Qué hace interactiva una interfaz: eventos (click, scroll, input), estado (los datos que cambian con el tiempo) y manipulación del DOM (actualizar lo que ve el usuario sin recargar la página).</p>
+        </article>
+
+        <article class="methodology-card methodology-card--medium">
+          <header class="methodology-card__header">
+            <i class="fa-brands fa-bootstrap"></i>
+            <h4>Frameworks (ej. Bootstrap)</h4>
+          </header>
+          <p>CSS y componentes ya construidos (grid, botones, formularios, navegación) sobre los que se construye más rápido y consistente, a cambio de menos control fino sobre el detalle visual.</p>
         </article>
 
         <article class="methodology-card methodology-card--medium">
@@ -799,7 +847,7 @@
             <i class="fa-solid fa-universal-access"></i>
             <h4>Responsive y accesibilidad técnica</h4>
           </header>
-          <p>Adaptación a distintos tamaños de pantalla y fundamentos de accesibilidad: ARIA, contraste, semántica.</p>
+          <p>Adaptación a distintos tamaños de pantalla (revisa las diferencias entre responsive, adaptativo y líquido en la card de CSS) y fundamentos de accesibilidad: ARIA, contraste, navegación por teclado.</p>
         </article>
       </div>
     </div>
@@ -1556,6 +1604,28 @@
 
   .methodology-card template {
     display: none;
+  }
+
+  .methodology-card--clickable {
+    cursor: pointer;
+  }
+
+  .methodology-card--clickable:hover {
+    transform: translateY(-2px);
+  }
+
+  .methodology-card--clickable:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  .methodology-card__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--accent);
+    font-size: 0.85rem;
+    font-weight: 600;
   }
 
   /* Lean UX Canvas */
