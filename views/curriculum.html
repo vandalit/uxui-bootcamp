@@ -1007,6 +1007,182 @@
       </div>
     </div>
 
+    <!-- Entregables de UI / sistema de diseño -->
+    <div class="research-section">
+      <div class="research-section__intro">
+        <h3>Entregables del sistema de diseño</h3>
+        <p>
+          Qué es cada entregable, sin ordenarlos por secuencia de construcción —
+          en la práctica se solapan y retroalimentan. Toca cualquier card para ver
+          un ejemplo de referencia.
+        </p>
+      </div>
+
+      <div class="research-filters" role="tablist" aria-label="Filtrar entregables del sistema de diseño">
+        <button class="filter-chip is-active" data-filter="all" role="tab" aria-selected="true">
+          <i class="fa-solid fa-layer-group"></i>Todos
+        </button>
+        <button class="filter-chip" data-filter="exploracion" role="tab" aria-selected="false">
+          <i class="fa-solid fa-swatchbook"></i>Exploración
+        </button>
+        <button class="filter-chip" data-filter="documentacion" role="tab" aria-selected="false">
+          <i class="fa-solid fa-file-lines"></i>Documentación
+        </button>
+        <button class="filter-chip" data-filter="sistema" role="tab" aria-selected="false">
+          <i class="fa-solid fa-cubes"></i>Sistema
+        </button>
+      </div>
+
+      <div class="research-list">
+        <article class="research-card research-card--clickable" data-tags="exploracion" tabindex="0" role="button" data-modal-title="Moodboard" data-modal-template="#tpl-deliverable-moodboard">
+          <i class="fa-solid fa-images"></i>
+          <div class="research-card__body">
+            <div class="research-card__tags">
+              <span class="tag tag--exploracion">Exploración</span>
+            </div>
+            <h5>Moodboard</h5>
+            <p>Collage de referencias visuales (color, fotografía, texturas, tipografía) para explorar y acordar una dirección estética antes de diseñar pantallas.</p>
+          </div>
+          <i class="fa-solid fa-up-right-and-down-left-from-center research-card__expand"></i>
+        </article>
+
+        <article class="research-card research-card--clickable" data-tags="exploracion" tabindex="0" role="button" data-modal-title="Style tile" data-modal-template="#tpl-deliverable-styletile">
+          <i class="fa-solid fa-palette"></i>
+          <div class="research-card__body">
+            <div class="research-card__tags">
+              <span class="tag tag--exploracion">Exploración</span>
+            </div>
+            <h5>Style tile</h5>
+            <p>Versión más acotada y orientada a producto del moodboard: junta colores, tipografía y un componente real en una sola lámina para validar dirección visual rápido.</p>
+          </div>
+          <i class="fa-solid fa-up-right-and-down-left-from-center research-card__expand"></i>
+        </article>
+
+        <article class="research-card research-card--clickable" data-tags="documentacion" tabindex="0" role="button" data-modal-title="Guía de estilo" data-modal-template="#tpl-deliverable-styleguide">
+          <i class="fa-solid fa-file-lines"></i>
+          <div class="research-card__body">
+            <div class="research-card__tags">
+              <span class="tag tag--documentacion">Documentación</span>
+            </div>
+            <h5>Guía de estilo</h5>
+            <p>Documento de reglas visuales: paleta, tipografía, iconografía y uso correcto/incorrecto de cada elemento, para que cualquiera aplique el estilo de forma consistente.</p>
+          </div>
+          <i class="fa-solid fa-up-right-and-down-left-from-center research-card__expand"></i>
+        </article>
+
+        <article class="research-card research-card--clickable" data-tags="documentacion sistema" tabindex="0" role="button" data-modal-title="Design tokens" data-modal-template="#tpl-deliverable-tokens">
+          <i class="fa-solid fa-tags"></i>
+          <div class="research-card__body">
+            <div class="research-card__tags">
+              <span class="tag tag--documentacion">Documentación</span>
+              <span class="tag tag--sistema">Sistema</span>
+            </div>
+            <h5>Design tokens</h5>
+            <p>Valores de diseño (color, espaciado, tipografía, radios) nombrados como variables centralizadas, para que diseño y código compartan la misma fuente de verdad.</p>
+          </div>
+          <i class="fa-solid fa-up-right-and-down-left-from-center research-card__expand"></i>
+        </article>
+
+        <article class="research-card research-card--clickable" data-tags="sistema" tabindex="0" role="button" data-modal-title="UI kit" data-modal-template="#tpl-deliverable-uikit">
+          <i class="fa-solid fa-shapes"></i>
+          <div class="research-card__body">
+            <div class="research-card__tags">
+              <span class="tag tag--sistema">Sistema</span>
+            </div>
+            <h5>UI kit</h5>
+            <p>Biblioteca de componentes de interfaz ya diseñados (botones, inputs, cards) con el estilo definido, listos para ensamblar pantallas sin rediseñar cada pieza.</p>
+          </div>
+          <i class="fa-solid fa-up-right-and-down-left-from-center research-card__expand"></i>
+        </article>
+
+        <article class="research-card research-card--clickable" data-tags="sistema" tabindex="0" role="button" data-modal-title="Design system" data-modal-template="#tpl-deliverable-designsystem">
+          <i class="fa-solid fa-cubes"></i>
+          <div class="research-card__body">
+            <div class="research-card__tags">
+              <span class="tag tag--sistema">Sistema</span>
+            </div>
+            <h5>Design system</h5>
+            <p>El conjunto que une tokens, UI kit, guías y documentación en un sistema coherente y escalable — no es un entregable más, es el que organiza a todos los demás.</p>
+          </div>
+          <i class="fa-solid fa-up-right-and-down-left-from-center research-card__expand"></i>
+        </article>
+      </div>
+
+      <template id="tpl-deliverable-moodboard">
+        <div class="moodboard-grid">
+          <span class="moodboard-swatch" style="background: var(--accent);"></span>
+          <span class="moodboard-swatch" style="background: rgba(110,168,254,0.4);"></span>
+          <span class="moodboard-swatch moodboard-swatch--photo"><i class="fa-solid fa-image"></i></span>
+          <span class="moodboard-swatch" style="background: #ffb45a;"></span>
+          <span class="moodboard-swatch moodboard-swatch--type">Aa</span>
+          <span class="moodboard-swatch" style="background: #7be0a0;"></span>
+        </div>
+        <p>Sin reglas todavía — solo referencias sueltas para alinear una sensación visual compartida entre diseño y stakeholders.</p>
+      </template>
+
+      <template id="tpl-deliverable-styletile">
+        <div class="styletile-panel">
+          <div class="styletile-row">
+            <span class="moodboard-swatch" style="background: var(--accent);"></span>
+            <span class="moodboard-swatch" style="background: #ffb45a;"></span>
+            <span class="moodboard-swatch" style="background: #7be0a0;"></span>
+          </div>
+          <div class="styletile-row styletile-row--type">Aa Bb Cc</div>
+          <div class="styletile-row">
+            <button class="styletile-btn" type="button" disabled>Botón</button>
+          </div>
+        </div>
+        <p>Ya apunta a producto: colores, tipografía y un componente real conviven en una sola lámina compacta.</p>
+      </template>
+
+      <template id="tpl-deliverable-styleguide">
+        <div class="styleguide-compare">
+          <div class="styleguide-col styleguide-col--do">
+            <i class="fa-solid fa-check"></i>
+            <span class="styletile-btn">Botón</span>
+            <p>Espaciado y color consistentes con el resto del producto.</p>
+          </div>
+          <div class="styleguide-col styleguide-col--dont">
+            <i class="fa-solid fa-xmark"></i>
+            <span class="styletile-btn" style="border-radius: 0; background: #555;">Botón</span>
+            <p>Estilo improvisado, fuera de la guía — rompe la consistencia.</p>
+          </div>
+        </div>
+      </template>
+
+      <template id="tpl-deliverable-tokens">
+        <pre class="tokens-code">--color-accent: #6ea8fe;
+--color-surface: #171a21;
+--spacing-md: 16px;
+--radius-lg: 14px;
+--font-size-body: 0.95rem;</pre>
+        <p>Estos mismos nombres (variables CSS) son los que usa este dashboard — <code>dashboard.css</code> define sus propios tokens en <code>:root</code>.</p>
+      </template>
+
+      <template id="tpl-deliverable-uikit">
+        <div class="uikit-grid">
+          <button class="styletile-btn" type="button" disabled>Botón</button>
+          <span class="uikit-input">Input</span>
+          <span class="uikit-checkbox"><i class="fa-solid fa-check"></i></span>
+          <span class="uikit-toggle"><span class="uikit-toggle__knob"></span></span>
+        </div>
+        <p>Piezas ya resueltas y consistentes entre sí — el siguiente paso es ensamblarlas en pantallas reales (ver catálogo de artefactos de pantalla más abajo).</p>
+      </template>
+
+      <template id="tpl-deliverable-designsystem">
+        <div class="dsystem-diagram">
+          <div class="dsystem-inputs">
+            <span class="sprint-chip">Tokens</span>
+            <span class="sprint-chip">UI kit</span>
+            <span class="sprint-chip">Guía de estilo</span>
+          </div>
+          <i class="fa-solid fa-arrow-down dsystem-arrow"></i>
+          <span class="dsystem-hub">Design system</span>
+        </div>
+        <p>No es un archivo único: es la relación viva entre todos los entregables anteriores, documentada y mantenida en el tiempo.</p>
+      </template>
+    </div>
+
     <!-- Sistemas de diseño y componentes -->
     <div class="methodology-section">
       <div class="methodology-section__intro">
@@ -2004,6 +2180,21 @@
     color: #ffd65a;
   }
 
+  .tag--exploracion {
+    background: rgba(255, 143, 199, 0.16);
+    color: #ff8fc7;
+  }
+
+  .tag--documentacion {
+    background: rgba(90, 209, 255, 0.16);
+    color: #5ad1ff;
+  }
+
+  .tag--sistema {
+    background: rgba(190, 140, 255, 0.16);
+    color: #c9a6ff;
+  }
+
   .tag--low-fi {
     background: rgba(154, 161, 173, 0.18);
     color: var(--text-dim);
@@ -2170,6 +2361,195 @@
     padding: 2rem 1rem;
   }
 
+  /* Entregables de UI / sistema de diseño — modal examples */
+  .moodboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .moodboard-swatch {
+    height: 3.2rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-dim);
+  }
+
+  .moodboard-swatch--photo {
+    background: var(--surface-raised);
+    font-size: 1.1rem;
+  }
+
+  .moodboard-swatch--type {
+    background: var(--surface-raised);
+    font-family: Georgia, serif;
+    font-size: 1.2rem;
+    color: var(--text);
+  }
+
+  .styletile-panel {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .styletile-row {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .styletile-row .moodboard-swatch {
+    flex: 1;
+    height: 2.2rem;
+  }
+
+  .styletile-row--type {
+    font-family: Georgia, serif;
+    font-size: 1.1rem;
+    color: var(--text);
+  }
+
+  .styletile-btn {
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1.1rem;
+    background: var(--accent);
+    color: var(--bg);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: default;
+  }
+
+  .styleguide-compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .styleguide-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+    padding: 1rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+  }
+
+  .styleguide-col--do i {
+    color: #7be0a0;
+  }
+
+  .styleguide-col--dont i {
+    color: #ff6b6b;
+  }
+
+  .styleguide-col p {
+    margin: 0;
+    font-size: 0.82rem;
+    color: var(--text-dim);
+  }
+
+  .tokens-code {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem 1.2rem;
+    font-family: "Courier New", monospace;
+    font-size: 0.85rem;
+    color: #7be0a0;
+    overflow-x: auto;
+    margin: 0 0 1rem;
+  }
+
+  .uikit-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .uikit-input {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0.8rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface-raised);
+    color: var(--text-dim);
+    font-size: 0.85rem;
+  }
+
+  .uikit-checkbox {
+    width: 1.6rem;
+    height: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    background: var(--accent);
+    color: var(--bg);
+    font-size: 0.8rem;
+  }
+
+  .uikit-toggle {
+    width: 2.6rem;
+    height: 1.4rem;
+    border-radius: 999px;
+    background: var(--accent);
+    display: flex;
+    align-items: center;
+    padding: 0.15rem;
+  }
+
+  .uikit-toggle__knob {
+    width: 1.1rem;
+    height: 1.1rem;
+    border-radius: 50%;
+    background: var(--bg);
+    margin-left: auto;
+  }
+
+  .dsystem-diagram {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .dsystem-inputs {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .dsystem-arrow {
+    color: var(--accent);
+    font-size: 0.9rem;
+  }
+
+  .dsystem-hub {
+    padding: 0.6rem 1.2rem;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
   /* Responsive */
   @media (max-width: 680px) {
     .curriculum__modules {
@@ -2217,6 +2597,11 @@
     .agile-loop__step,
     .agile-loop__label {
       font-size: 0.76rem;
+    }
+
+    .styleguide-compare,
+    .uikit-grid {
+      grid-template-columns: 1fr;
     }
   }
 </style>
