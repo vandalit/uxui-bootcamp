@@ -1,0 +1,84 @@
+<section class="curriculum">
+  <header class="curriculum__intro">
+    <h1>Estructura curricular</h1>
+    <p>Vista placeholder — próximamente el detalle de cada módulo, semanas y entregables.</p>
+  </header>
+
+  <div class="curriculum__modules">
+    <article class="module-card">
+      <i class="fa-solid fa-magnifying-glass-chart"></i>
+      <h3>UX</h3>
+      <p>Investigación, arquitectura de información, validación.</p>
+    </article>
+
+    <article class="module-card">
+      <i class="fa-solid fa-code"></i>
+      <h3>Desarrollo Web</h3>
+      <p>HTML, CSS, JS y fundamentos de integración front-end.</p>
+    </article>
+
+    <article class="module-card">
+      <i class="fa-solid fa-pen-ruler"></i>
+      <h3>UI</h3>
+      <p>Sistemas de diseño, visual design, prototipado.</p>
+    </article>
+
+    <article class="module-card">
+      <i class="fa-solid fa-rocket"></i>
+      <h3>Proyecto</h3>
+      <p>Integración end-to-end de un caso real de producto.</p>
+    </article>
+  </div>
+</section>
+
+<style>
+  .curriculum__intro {
+    margin-bottom: 2rem;
+  }
+
+  .curriculum__intro h1 {
+    margin: 0 0 0.4rem;
+  }
+
+  .curriculum__intro p {
+    color: var(--text-dim);
+    margin: 0;
+  }
+
+  .curriculum__modules {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .module-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    transition: transform var(--transition), border-color var(--transition);
+  }
+
+  .module-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+  }
+
+  .module-card i {
+    font-size: 1.5rem;
+    color: var(--accent);
+  }
+
+  .module-card h3 {
+    margin: 0;
+  }
+
+  .module-card p {
+    margin: 0;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+  }
+</style>
