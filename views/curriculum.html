@@ -619,6 +619,70 @@
       </div>
     </div>
 
+    <!-- Arquitectura de la información -->
+    <div class="concepts-section">
+      <div class="concepts-section__intro">
+        <h3>Arquitectura de la información (AI)</h3>
+        <p>
+          Organizar y estructurar el contenido de un producto para que sea
+          encontrable y navegable de forma predecible.
+          <a class="phase-chip" href="#metodo-card-sorting"><i class="fa-solid fa-arrow-up"></i>Card sorting</a> y
+          <a class="phase-chip" href="#metodo-tree-testing"><i class="fa-solid fa-arrow-up"></i>Tree testing</a>
+          (arriba, en Research) son los <strong>métodos</strong> para construir y validar esa
+          estructura — esta sección es sobre los <strong>conceptos y el entregable</strong> que
+          esos métodos alimentan.
+        </p>
+      </div>
+
+      <div class="research-list">
+        <article class="research-card">
+          <i class="fa-solid fa-tags"></i>
+          <div class="research-card__body">
+            <h5>Taxonomía</h5>
+            <p>El sistema de categorías y etiquetas usado para clasificar el contenido — <em>cómo se nombra y agrupa</em> todo lo que existe en el producto. Card sorting es el método típico para descubrirla o validarla con usuarios reales.</p>
+          </div>
+        </article>
+
+        <article class="research-card research-card--clickable" tabindex="0" role="button" data-modal-title="Mapa de navegación" data-modal-template="#tpl-sitemap">
+          <i class="fa-solid fa-sitemap"></i>
+          <div class="research-card__body">
+            <h5>Mapa de navegación (sitemap)</h5>
+            <p>El entregable visual de jerarquía: qué pantallas existen y cómo se conectan entre sí — <em>cómo se llega</em> de una a otra. A diferencia de la taxonomía (que nombra y agrupa contenido), el mapa de navegación estructura las pantallas que lo contienen.</p>
+          </div>
+          <i class="fa-solid fa-up-right-and-down-left-from-center research-card__expand"></i>
+        </article>
+      </div>
+
+      <p class="concepts-section__bridge">
+        De la jerarquía del mapa de navegación se desprenden las rutas concretas que documentan
+        los flujos — ver
+        <a class="phase-chip" href="#modulo-ui"><i class="fa-solid fa-arrow-down"></i>catálogo de artefactos de pantalla</a>
+        en módulo UI.
+      </p>
+
+      <template id="tpl-sitemap">
+        <svg viewBox="0 0 280 150" class="flow-diagram" role="img" aria-label="Diagrama jerárquico de mapa de navegación con un nodo raíz y ramas a páginas hijas">
+          <defs>
+            <marker id="arrow-sitemap" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 z" fill="var(--accent)"></path>
+            </marker>
+          </defs>
+          <rect x="108" y="10" width="64" height="26" rx="5" fill="var(--surface-raised)" stroke="var(--accent)" stroke-width="2.5"></rect>
+          <line x1="140" y1="36" x2="60" y2="66" stroke="var(--accent)" stroke-width="2.5" marker-end="url(#arrow-sitemap)"></line>
+          <line x1="140" y1="36" x2="140" y2="66" stroke="var(--accent)" stroke-width="2.5" marker-end="url(#arrow-sitemap)"></line>
+          <line x1="140" y1="36" x2="220" y2="66" stroke="var(--accent)" stroke-width="2.5" marker-end="url(#arrow-sitemap)"></line>
+          <rect x="28" y="70" width="64" height="26" rx="5" fill="var(--surface-raised)" stroke="var(--accent)" stroke-width="2.5"></rect>
+          <rect x="108" y="70" width="64" height="26" rx="5" fill="var(--surface-raised)" stroke="var(--accent)" stroke-width="2.5"></rect>
+          <rect x="188" y="70" width="64" height="26" rx="5" fill="var(--surface-raised)" stroke="var(--accent)" stroke-width="2.5"></rect>
+          <line x1="220" y1="96" x2="188" y2="124" stroke="var(--accent)" stroke-width="2.5" marker-end="url(#arrow-sitemap)"></line>
+          <line x1="220" y1="96" x2="252" y2="124" stroke="var(--accent)" stroke-width="2.5" marker-end="url(#arrow-sitemap)"></line>
+          <rect x="156" y="128" width="64" height="22" rx="5" fill="var(--surface-raised)" stroke="var(--text-dim)" stroke-width="1.8"></rect>
+          <rect x="220" y="128" width="64" height="22" rx="5" fill="var(--surface-raised)" stroke="var(--text-dim)" stroke-width="1.8"></rect>
+        </svg>
+        <p>Jerarquía pura — sin rombos de decisión ni ramas condicionales. Cada caja es una pantalla; cada línea, una relación padre-hijo en la estructura del sitio. Es el "plano" del producto del que luego se desprenden user flows y task flows puntuales.</p>
+      </template>
+    </div>
+
     <!-- Heurísticas de Nielsen -->
     <div class="heuristics-section">
       <div class="heuristics-section__intro">
@@ -1697,6 +1761,16 @@
     color: var(--text-dim);
     font-size: 0.92rem;
     max-width: 640px;
+  }
+
+  .concepts-section__bridge {
+    margin: 1.25rem 0 0;
+    color: var(--text-dim);
+    font-size: 0.88rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
   }
 
   /* Metodología de diseño */
