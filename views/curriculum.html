@@ -716,7 +716,7 @@
           <div class="heuristic-card__body">
             <h5>Coincidencia entre el sistema y el mundo real</h5>
             <p>El lenguaje y los conceptos deben ser familiares para el usuario, no jerga interna del sistema.</p>
-            <a class="heuristic-card__link" href="https://www.nngroup.com/articles/match-between-system-and-the-real-world/" target="_blank" rel="noopener">
+            <a class="heuristic-card__link" href="https://www.nngroup.com/articles/match-system-real-world/" target="_blank" rel="noopener">
               Ver en NN/G <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>
           </div>
@@ -772,7 +772,7 @@
           <div class="heuristic-card__body">
             <h5>Reconocer antes que recordar</h5>
             <p>Minimizar la carga de memoria haciendo visibles objetos, acciones y opciones.</p>
-            <a class="heuristic-card__link" href="https://www.nngroup.com/articles/recognition-rather-than-recall/" target="_blank" rel="noopener">
+            <a class="heuristic-card__link" href="https://www.nngroup.com/articles/recognition-and-recall/" target="_blank" rel="noopener">
               Ver en NN/G <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>
           </div>
@@ -786,7 +786,7 @@
           <div class="heuristic-card__body">
             <h5>Flexibilidad y eficiencia de uso</h5>
             <p>Atajos para usuarios expertos sin afectar la claridad para usuarios novatos.</p>
-            <a class="heuristic-card__link" href="https://www.nngroup.com/articles/flexibility-and-efficiency-of-use/" target="_blank" rel="noopener">
+            <a class="heuristic-card__link" href="https://www.nngroup.com/articles/flexibility-efficiency-heuristic/" target="_blank" rel="noopener">
               Ver en NN/G <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>
           </div>
@@ -800,7 +800,7 @@
           <div class="heuristic-card__body">
             <h5>Diseño estético y minimalista</h5>
             <p>Solo la información esencial para la tarea actual; cada elemento extra compite por atención.</p>
-            <a class="heuristic-card__link" href="https://www.nngroup.com/articles/aesthetic-and-minimalist-design/" target="_blank" rel="noopener">
+            <a class="heuristic-card__link" href="https://www.nngroup.com/articles/aesthetic-minimalist-design/" target="_blank" rel="noopener">
               Ver en NN/G <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>
           </div>
@@ -814,7 +814,7 @@
           <div class="heuristic-card__body">
             <h5>Reconocer, diagnosticar y recuperarse de errores</h5>
             <p>Mensajes de error en lenguaje claro que expliquen el problema y sugieran una solución.</p>
-            <a class="heuristic-card__link" href="https://www.nngroup.com/articles/help-users-recognize-diagnose-recover-errors/" target="_blank" rel="noopener">
+            <a class="heuristic-card__link" href="https://www.nngroup.com/articles/error-message-guidelines/" target="_blank" rel="noopener">
               Ver en NN/G <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>
           </div>
@@ -1110,18 +1110,6 @@
           <i class="fa-solid fa-up-right-and-down-left-from-center research-card__expand"></i>
         </article>
 
-        <article class="research-card research-card--clickable" data-tags="exploracion" tabindex="0" role="button" data-modal-title="Style tile" data-modal-template="#tpl-deliverable-styletile">
-          <i class="fa-solid fa-palette"></i>
-          <div class="research-card__body">
-            <div class="research-card__tags">
-              <span class="tag tag--exploracion">Exploración</span>
-            </div>
-            <h5>Style tile</h5>
-            <p>Versión más acotada y orientada a producto del moodboard: junta colores, tipografía y un componente real en una sola lámina para validar dirección visual rápido.</p>
-          </div>
-          <i class="fa-solid fa-up-right-and-down-left-from-center research-card__expand"></i>
-        </article>
-
         <article class="research-card research-card--clickable" data-tags="documentacion" tabindex="0" role="button" data-modal-title="Guía de estilo" data-modal-template="#tpl-deliverable-styleguide">
           <i class="fa-solid fa-file-lines"></i>
           <div class="research-card__body">
@@ -1129,7 +1117,7 @@
               <span class="tag tag--documentacion">Documentación</span>
             </div>
             <h5>Guía de estilo</h5>
-            <p>Documento de reglas visuales: paleta, tipografía, iconografía y uso correcto/incorrecto de cada elemento, para que cualquiera aplique el estilo de forma consistente.</p>
+            <p>Del style tile (lámina rápida de colores, tipografía y un componente real para validar dirección visual) al documento completo de reglas: paleta, tipografía, iconografía y uso correcto/incorrecto de cada elemento.</p>
           </div>
           <i class="fa-solid fa-up-right-and-down-left-from-center research-card__expand"></i>
         </article>
@@ -1184,7 +1172,8 @@
         <p>Sin reglas todavía — solo referencias sueltas para alinear una sensación visual compartida entre diseño y stakeholders.</p>
       </template>
 
-      <template id="tpl-deliverable-styletile">
+      <template id="tpl-deliverable-styleguide">
+        <h5 class="modal-subhead">Style tile — el punto de partida</h5>
         <div class="styletile-panel">
           <div class="styletile-row">
             <span class="moodboard-swatch" style="background: var(--accent);"></span>
@@ -1196,10 +1185,9 @@
             <button class="styletile-btn" type="button" disabled>Botón</button>
           </div>
         </div>
-        <p>Ya apunta a producto: colores, tipografía y un componente real conviven en una sola lámina compacta.</p>
-      </template>
+        <p>Una lámina rápida y compacta: colores, tipografía y un componente real conviven juntos para validar dirección visual antes de documentar reglas.</p>
 
-      <template id="tpl-deliverable-styleguide">
+        <h5 class="modal-subhead">Guía de estilo — el documento completo</h5>
         <div class="styleguide-compare">
           <div class="styleguide-col styleguide-col--do">
             <i class="fa-solid fa-check"></i>
@@ -1212,6 +1200,7 @@
             <p>Estilo improvisado, fuera de la guía — rompe la consistencia.</p>
           </div>
         </div>
+        <p>Ya formalizado en reglas: define qué es correcto e incorrecto para cada elemento, para que cualquiera lo aplique de forma consistente.</p>
       </template>
 
       <template id="tpl-deliverable-tokens">
@@ -2506,6 +2495,16 @@
     font-family: Georgia, serif;
     font-size: 1.2rem;
     color: var(--text);
+  }
+
+  .modal-subhead {
+    margin: 0 0 0.6rem;
+    font-size: 0.95rem;
+    color: var(--text-dim);
+  }
+
+  .modal-subhead:not(:first-child) {
+    margin-top: 1.5rem;
   }
 
   .styletile-panel {
