@@ -6,6 +6,7 @@
 
   const viewCache = new Map();
   let moduleObserver = null;
+  let stickyNavObserver = null;
   let modalRoot = null;
   let activeMainSrc = null;
 
@@ -110,6 +111,28 @@
     sections.forEach((section) => moduleObserver.observe(section));
   }
 
+  function refreshStickyModuleNav() {
+    if (stickyNavObserver) {
+      stickyNavObserver.disconnect();
+      stickyNavObserver = null;
+    }
+
+    const nav = outlet.querySelector(".curriculum__modules");
+    const intro = outlet.querySelector(".curriculum__intro");
+    if (!nav || !intro) return;
+
+    stickyNavObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          nav.classList.toggle("is-compact", !entry.isIntersecting);
+        });
+      },
+      { rootMargin: "-88px 0px 0px 0px", threshold: 0 }
+    );
+
+    stickyNavObserver.observe(intro);
+  }
+
   function refreshResearchFilters() {
     const filterBars = Array.from(outlet.querySelectorAll(".research-filters"));
     if (!filterBars.length) return;
@@ -182,6 +205,7 @@
 
     outlet.innerHTML = html;
     refreshModuleAnchors();
+    refreshStickyModuleNav();
     refreshResearchFilters();
     refreshModalTriggers();
     refreshSubviewTriggers();

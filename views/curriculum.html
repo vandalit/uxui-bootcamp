@@ -1667,6 +1667,7 @@
     z-index: 5;
     background: var(--bg);
     padding: 0.5rem 0;
+    transition: gap var(--transition), padding var(--transition);
   }
 
   .module-anchor {
@@ -1679,7 +1680,14 @@
     gap: 0.6rem;
     text-decoration: none;
     color: inherit;
-    transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+    transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition), padding var(--transition), gap var(--transition);
+  }
+
+  .module-anchor p {
+    max-height: 3rem;
+    opacity: 1;
+    overflow: hidden;
+    transition: max-height var(--transition), opacity var(--transition), margin var(--transition);
   }
 
   .module-anchor:hover {
@@ -1709,6 +1717,41 @@
     margin: 0;
     color: var(--text-dim);
     font-size: 0.9rem;
+  }
+
+  /* Compact sticky nav (desktop only — mobile keeps the nav static, see responsive block) */
+  @media (min-width: 681px) {
+    .curriculum__modules.is-compact {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 0.6rem;
+      padding: 0.4rem 0;
+    }
+
+    .curriculum__modules.is-compact .module-anchor {
+      flex: 1 1 0;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0.55rem;
+      padding: 0.55rem 1rem;
+      border-radius: 999px;
+    }
+
+    .curriculum__modules.is-compact .module-anchor i {
+      font-size: 1.05rem;
+    }
+
+    .curriculum__modules.is-compact .module-anchor h3 {
+      font-size: 0.88rem;
+      white-space: nowrap;
+    }
+
+    .curriculum__modules.is-compact .module-anchor p {
+      max-height: 0;
+      opacity: 0;
+      margin: 0;
+    }
   }
 
   /* Module sections */
