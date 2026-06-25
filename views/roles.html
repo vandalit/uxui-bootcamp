@@ -1,5 +1,340 @@
-<div class="view-placeholder">
-  <i class="fa-solid fa-circle-nodes"></i>
-  <h2>Roles complementarios</h2>
-  <p>Próximamente: diagramas de Venn entre UX, Service Design, CX y roles afines.</p>
-</div>
+<section class="roles">
+  <header class="roles__intro">
+    <h1>Roles complementarios</h1>
+    <p>Disciplinas que se solapan con UX pero no son lo mismo — entender el límite ayuda a saber cuándo un proyecto necesita un especialista distinto.</p>
+  </header>
+
+  <div class="roles-block">
+    <h3>UX, Service Design y CX: ¿dónde termina cada uno?</h3>
+
+    <div class="venn-diagram" aria-hidden="true">
+      <span class="venn-circle venn-circle--ux"></span>
+      <span class="venn-circle venn-circle--service"></span>
+      <span class="venn-circle venn-circle--cx"></span>
+    </div>
+
+    <div class="venn-legend">
+      <div class="venn-legend__item">
+        <span class="venn-legend__swatch venn-legend__swatch--ux"></span>
+        <div>
+          <h5>UX Design</h5>
+          <p>Diseña la interacción y la experiencia dentro de un producto digital específico.</p>
+        </div>
+      </div>
+
+      <div class="venn-legend__item">
+        <span class="venn-legend__swatch venn-legend__swatch--service"></span>
+        <div>
+          <h5>Service Design</h5>
+          <p>Diseña el servicio completo, incluyendo lo que pasa fuera de la pantalla: soporte, procesos físicos, personas.</p>
+        </div>
+      </div>
+
+      <div class="venn-legend__item">
+        <span class="venn-legend__swatch venn-legend__swatch--cx"></span>
+        <div>
+          <h5>CX (Customer Experience)</h5>
+          <p>La percepción acumulada del cliente sobre toda su relación con la marca, a través de todos los canales y el tiempo.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="roles-block__note">Las tres comparten foco en la persona, pero a distinta escala: producto → servicio → relación completa con la marca.</p>
+  </div>
+
+  <div class="roles-block">
+    <h3>Roles afines que vas a encontrar en equipos reales</h3>
+    <p class="roles-block__note">No siempre existen como puestos separados — en equipos chicos, una sola persona absorbe varios. Toca cualquiera para ver su detalle.</p>
+
+    <div class="research-list">
+      <article class="research-card research-card--clickable" tabindex="0" role="button" data-modal-title="UX Researcher" data-modal-template="#tpl-role-researcher">
+        <i class="fa-solid fa-magnifying-glass-chart"></i>
+        <div class="research-card__body">
+          <h5>UX Researcher (dedicado)</h5>
+          <p>Cuando el equipo crece, la investigación se separa del diseño: entrevistas, tests de usabilidad y síntesis, sin diseñar las soluciones.</p>
+        </div>
+        <i class="fa-solid fa-up-right-and-down-left-from-center research-card__expand"></i>
+      </article>
+
+      <article class="research-card research-card--clickable" tabindex="0" role="button" data-modal-title="Content Designer / UX Writer" data-modal-template="#tpl-role-writer">
+        <i class="fa-solid fa-pen-nib"></i>
+        <div class="research-card__body">
+          <h5>Content Designer / UX Writer</h5>
+          <p>Microcopy, tono de voz y contenido de la interfaz — un texto mal escrito puede romper un flujo bien diseñado.</p>
+        </div>
+        <i class="fa-solid fa-up-right-and-down-left-from-center research-card__expand"></i>
+      </article>
+
+      <article class="research-card research-card--clickable" tabindex="0" role="button" data-modal-title="Service Designer" data-modal-template="#tpl-role-service">
+        <i class="fa-solid fa-route"></i>
+        <div class="research-card__body">
+          <h5>Service Designer</h5>
+          <p>Diseña la experiencia end-to-end de un servicio, incluyendo lo que pasa fuera de la pantalla: soporte, logística, personas.</p>
+        </div>
+        <i class="fa-solid fa-up-right-and-down-left-from-center research-card__expand"></i>
+      </article>
+
+      <article class="research-card research-card--clickable" tabindex="0" role="button" data-modal-title="CX Manager" data-modal-template="#tpl-role-cx">
+        <i class="fa-solid fa-heart-circle-check"></i>
+        <div class="research-card__body">
+          <h5>CX Manager / Customer Experience</h5>
+          <p>Mide y gestiona la satisfacción del cliente a través de todos los puntos de contacto con la marca, no solo el producto digital.</p>
+        </div>
+        <i class="fa-solid fa-up-right-and-down-left-from-center research-card__expand"></i>
+      </article>
+
+      <article class="research-card research-card--clickable" tabindex="0" role="button" data-modal-title="Especialista en accesibilidad" data-modal-template="#tpl-role-a11y">
+        <i class="fa-solid fa-universal-access"></i>
+        <div class="research-card__body">
+          <h5>Especialista en accesibilidad (a11y)</h5>
+          <p>Asegura que el producto sea usable por personas con discapacidad, auditando cumplimiento de estándares como WCAG.</p>
+        </div>
+        <i class="fa-solid fa-up-right-and-down-left-from-center research-card__expand"></i>
+      </article>
+
+      <article class="research-card research-card--clickable" tabindex="0" role="button" data-modal-title="Product Designer" data-modal-template="#tpl-role-productdesigner">
+        <i class="fa-solid fa-layer-group"></i>
+        <div class="research-card__body">
+          <h5>Product Designer</h5>
+          <p>Rol híbrido que combina UX + UI en equipos pequeños: una sola persona diseña tanto la lógica como la interfaz visual.</p>
+        </div>
+        <i class="fa-solid fa-up-right-and-down-left-from-center research-card__expand"></i>
+      </article>
+    </div>
+
+    <template id="tpl-role-researcher">
+      <p><strong>Qué hace:</strong> planifica y conduce entrevistas, encuestas y tests de usabilidad; sintetiza hallazgos en insights accionables.</p>
+      <p><strong>Cuándo aparece:</strong> en equipos donde el volumen de investigación es alto y separar el rol evita que el diseñador investigue y diseñe bajo presión de tiempo, sesgando ambos procesos.</p>
+      <p><strong>Con quién trabaja:</strong> entrega hallazgos a UX Design y Product Owner para priorizar el backlog con evidencia.</p>
+    </template>
+
+    <template id="tpl-role-writer">
+      <p><strong>Qué hace:</strong> define el tono de voz del producto y escribe cada texto de la interfaz: botones, mensajes de error, onboarding, notificaciones.</p>
+      <p><strong>Por qué importa:</strong> la claridad del contenido puede determinar si un flujo bien diseñado se entiende o se abandona.</p>
+      <p><strong>Con quién trabaja:</strong> de la mano con UX (estructura del flujo) y UI (dónde y cómo se muestra el texto).</p>
+    </template>
+
+    <template id="tpl-role-service">
+      <p><strong>Qué hace:</strong> mapea y diseña toda la experiencia de un servicio, incluyendo etapas sin pantalla: atención telefónica, procesos presenciales, logística.</p>
+      <p><strong>Diferencia con UX:</strong> UX diseña dentro del producto digital; Service Design diseña el servicio completo, dentro y fuera de la pantalla.</p>
+      <p><strong>Cuándo aparece:</strong> en negocios con componentes físicos u operativos relevantes (retail, salud, banca presencial).</p>
+    </template>
+
+    <template id="tpl-role-cx">
+      <p><strong>Qué hace:</strong> mide satisfacción (NPS, CSAT) y gestiona la experiencia del cliente a lo largo de toda su relación con la marca, no solo en un producto puntual.</p>
+      <p><strong>Diferencia con UX:</strong> CX opera a nivel de negocio y marca; UX opera a nivel de un producto o flujo específico.</p>
+      <p><strong>Con quién trabaja:</strong> con marketing, soporte y producto para alinear la experiencia a través de todos los canales.</p>
+    </template>
+
+    <template id="tpl-role-a11y">
+      <p><strong>Qué hace:</strong> audita componentes y pantallas contra estándares de accesibilidad (contraste, navegación por teclado, lectores de pantalla) y propone correcciones.</p>
+      <p><strong>Por qué importa:</strong> sin este rol, la accesibilidad suele quedar como una idea de último momento en vez de un requisito desde el diseño.</p>
+      <p><strong>Con quién trabaja:</strong> con UI (componentes) y desarrollo (implementación correcta de semántica y atributos ARIA).</p>
+    </template>
+
+    <template id="tpl-role-productdesigner">
+      <p><strong>Qué hace:</strong> cubre investigación, flujos, wireframes, sistema visual y prototipo de alta fidelidad — el ciclo completo de UX + UI.</p>
+      <p><strong>Cuándo aparece:</strong> en startups o equipos pequeños donde no se justifica separar UX y UI en dos personas distintas.</p>
+      <p><strong>Riesgo:</strong> sin tiempo o disciplina suficiente, alguna etapa (casi siempre investigación) se sacrifica primero.</p>
+    </template>
+  </div>
+</section>
+
+<style>
+  .roles {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .roles__intro h1 {
+    margin: 0 0 0.4rem;
+  }
+
+  .roles__intro p {
+    margin: 0;
+    color: var(--text-dim);
+  }
+
+  .roles-block {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.4rem 1.5rem;
+  }
+
+  .roles-block h3 {
+    margin: 0 0 1rem;
+  }
+
+  .roles-block__note {
+    margin: 1rem 0 0;
+    color: var(--text-dim);
+    font-size: 0.88rem;
+  }
+
+  /* Venn diagram */
+  .venn-diagram {
+    position: relative;
+    width: 300px;
+    height: 260px;
+    margin: 0 auto 1.5rem;
+  }
+
+  .venn-circle {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: var(--accent-soft);
+  }
+
+  .venn-circle--ux {
+    top: 0;
+    left: 60px;
+    border: 2px solid var(--accent);
+  }
+
+  .venn-circle--service {
+    top: 80px;
+    left: 0;
+    border: 2px dashed var(--accent);
+  }
+
+  .venn-circle--cx {
+    top: 80px;
+    left: 120px;
+    border: 2px dotted var(--accent);
+  }
+
+  .venn-legend {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .venn-legend__item {
+    display: flex;
+    gap: 0.6rem;
+  }
+
+  .venn-legend__swatch {
+    flex-shrink: 0;
+    width: 0.9rem;
+    height: 0.9rem;
+    border-radius: 50%;
+    margin-top: 0.25rem;
+    background: var(--accent-soft);
+  }
+
+  .venn-legend__swatch--ux {
+    border: 2px solid var(--accent);
+  }
+
+  .venn-legend__swatch--service {
+    border: 2px dashed var(--accent);
+  }
+
+  .venn-legend__swatch--cx {
+    border: 2px dotted var(--accent);
+  }
+
+  .venn-legend__item h5 {
+    margin: 0 0 0.3rem;
+    font-size: 0.9rem;
+  }
+
+  .venn-legend__item p {
+    margin: 0;
+    color: var(--text-dim);
+    font-size: 0.82rem;
+  }
+
+  /* Reused research-card pattern (matches curriculum.html / ecosystem.html) */
+  .research-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .research-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.1rem 1.3rem;
+  }
+
+  .research-card i {
+    font-size: 1.2rem;
+    color: var(--accent);
+    margin-top: 0.2rem;
+  }
+
+  .research-card__body h5 {
+    margin: 0 0 0.4rem;
+  }
+
+  .research-card__body p {
+    margin: 0;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+  }
+
+  .research-card--clickable {
+    position: relative;
+    cursor: pointer;
+    transition: border-color var(--transition), transform var(--transition);
+  }
+
+  .research-card--clickable:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  .research-card--clickable:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  .research-card__expand {
+    position: absolute;
+    top: 1rem;
+    right: 1.1rem;
+    font-size: 0.78rem !important;
+    color: var(--text-dim) !important;
+    margin-top: 0 !important;
+  }
+
+  @media (max-width: 680px) {
+    .venn-diagram {
+      width: 220px;
+      height: 200px;
+    }
+
+    .venn-circle {
+      width: 130px;
+      height: 130px;
+    }
+
+    .venn-circle--ux {
+      left: 45px;
+    }
+
+    .venn-circle--service {
+      top: 60px;
+      left: 0;
+    }
+
+    .venn-circle--cx {
+      top: 60px;
+      left: 90px;
+    }
+
+    .venn-legend {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
