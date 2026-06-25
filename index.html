@@ -6,6 +6,12 @@
   <title>UX Bootcamp · Dashboard</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="assets/css/dashboard.css">
+  <script>
+    (function () {
+      var saved = localStorage.getItem("uxbootcamp-theme") || "dark";
+      document.documentElement.setAttribute("data-theme", saved);
+    })();
+  </script>
 </head>
 <body>
 
@@ -46,6 +52,39 @@
 
       <span class="tab-banner__indicator" aria-hidden="true"></span>
     </nav>
+
+    <div class="app-header__actions">
+      <div class="theme-switch">
+        <button class="theme-switch__btn" id="theme-quick-toggle" type="button" aria-label="Cambiar a tema claro">
+          <i class="fa-solid fa-sun"></i>
+        </button>
+        <button
+          class="theme-switch__btn"
+          id="theme-settings-btn"
+          type="button"
+          aria-label="Elegir tema"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          <i class="fa-solid fa-palette"></i>
+        </button>
+
+        <div class="theme-panel" id="theme-panel" role="menu" hidden>
+          <button class="theme-option" type="button" role="menuitem" data-theme="dark">
+            <span class="theme-option__swatch theme-option__swatch--dark"></span>Oscuro
+          </button>
+          <button class="theme-option" type="button" role="menuitem" data-theme="light">
+            <span class="theme-option__swatch theme-option__swatch--light"></span>Claro
+          </button>
+          <button class="theme-option" type="button" role="menuitem" data-theme="contrast">
+            <span class="theme-option__swatch theme-option__swatch--contrast"></span>Alto contraste
+          </button>
+          <button class="theme-option" type="button" role="menuitem" data-theme="ocean">
+            <span class="theme-option__swatch theme-option__swatch--ocean"></span>Océano
+          </button>
+        </div>
+      </div>
+    </div>
   </header>
 
   <main id="view-root" class="view-root">

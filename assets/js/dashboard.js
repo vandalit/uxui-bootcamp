@@ -10,6 +10,73 @@
   let modalRoot = null;
   let activeMainSrc = null;
 
+  const THEME_KEY = "uxbootcamp-theme";
+  const THEMES = ["dark", "light", "contrast", "ocean"];
+
+  function setupThemeSwitcher() {
+    const quickToggle = document.getElementById("theme-quick-toggle");
+    const settingsBtn = document.getElementById("theme-settings-btn");
+    const panel = document.getElementById("theme-panel");
+    if (!quickToggle || !settingsBtn || !panel) return;
+
+    const options = Array.from(panel.querySelectorAll(".theme-option"));
+
+    function getTheme() {
+      return document.documentElement.getAttribute("data-theme") || "dark";
+    }
+
+    function applyTheme(theme) {
+      if (!THEMES.includes(theme)) theme = "dark";
+      document.documentElement.setAttribute("data-theme", theme);
+      localStorage.setItem(THEME_KEY, theme);
+      quickToggle.querySelector("i").className =
+        theme === "light" ? "fa-solid fa-moon" : "fa-solid fa-sun";
+      quickToggle.setAttribute(
+        "aria-label",
+        theme === "light" ? "Cambiar a tema oscuro" : "Cambiar a tema claro"
+      );
+      options.forEach((opt) => opt.classList.toggle("is-active", opt.dataset.theme === theme));
+    }
+
+    function closePanel() {
+      panel.hidden = true;
+      settingsBtn.setAttribute("aria-expanded", "false");
+    }
+
+    function openPanel() {
+      panel.hidden = false;
+      settingsBtn.setAttribute("aria-expanded", "true");
+    }
+
+    quickToggle.addEventListener("click", () => {
+      applyTheme(getTheme() === "light" ? "dark" : "light");
+    });
+
+    settingsBtn.addEventListener("click", () => {
+      if (panel.hidden) openPanel();
+      else closePanel();
+    });
+
+    options.forEach((opt) => {
+      opt.addEventListener("click", () => {
+        applyTheme(opt.dataset.theme);
+        closePanel();
+      });
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!panel.hidden && !panel.contains(e.target) && e.target !== settingsBtn && !settingsBtn.contains(e.target)) {
+        closePanel();
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closePanel();
+    });
+
+    applyTheme(getTheme());
+  }
+
   function ensureModal() {
     if (modalRoot) return modalRoot;
 
@@ -309,4 +376,6 @@
     moveIndicatorTo(initialTab);
     loadView(initialTab);
   }
+
+  setupThemeSwitcher();
 })();
