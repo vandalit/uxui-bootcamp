@@ -225,7 +225,7 @@
     const src = tab.dataset.src;
     activeMainSrc = src;
     const html = await fetchView(src);
-    await renderOutlet(html);
+    await renderOutlet(html, scrollViewportTop);
   }
 
   async function loadSubview(src, returnLabel, returnAnchor) {
@@ -239,6 +239,7 @@
       </nav>
     `;
     await renderOutlet(breadcrumb + html, () => {
+      scrollViewportTop();
       const backBtn = outlet.querySelector(".subview-breadcrumb__back");
       if (backBtn) {
         backBtn.addEventListener("click", () => returnToMain(returnSrc, returnAnchor));
@@ -249,9 +250,16 @@
   async function returnToMain(returnSrc, anchor) {
     const html = await fetchView(returnSrc);
     await renderOutlet(html, () => {
-      if (!anchor) return;
+      if (!anchor) {
+        scrollViewportTop();
+        return;
+      }
       const target = outlet.querySelector(anchor);
-      if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      } else {
+        scrollViewportTop();
+      }
     });
   }
 
@@ -267,6 +275,10 @@
 
   function wait(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
+  }
+
+  function scrollViewportTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   function activateTab(tab) {
