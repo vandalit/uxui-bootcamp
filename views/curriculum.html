@@ -1661,14 +1661,95 @@
         <p>No representa pantallas ni navegación: son viñetas ilustradas que cuentan el contexto y la experiencia de un usuario antes (o fuera) de la interfaz, acotadas a la escena que se quiere comunicar.</p>
       </template>
 
-      <div class="view-placeholder view-placeholder--inline">
-        <i class="fa-solid fa-route"></i>
-        <h2>Cronología de construcción</h2>
-        <p>
-          El orden de construcción de un flujo (sketch → wireframe → mockup → prototipo)
-          se abordará en una futura vista dedicada a proceso, no en esta vista organizada por categorías.
-        </p>
+      <div class="construction-timeline-block">
+        <h3>Cronología de construcción</h3>
+        <p class="construction-timeline__intro">El mismo set de artefactos del catálogo anterior, ahora en su orden real de construcción — desliza y toca cada etapa para ver su detalle.</p>
+
+        <div class="construction-timeline">
+          <button class="timeline-step" type="button" data-modal-title="Sketch" data-modal-template="#tpl-construction-sketch">
+            <span class="timeline-step__index">01</span>
+            <i class="fa-solid fa-pencil"></i>
+            <span class="timeline-step__label">Sketch</span>
+          </button>
+          <i class="fa-solid fa-arrow-right timeline-connector" aria-hidden="true"></i>
+          <button class="timeline-step" type="button" data-modal-title="Wireframe" data-modal-template="#tpl-construction-wireframe">
+            <span class="timeline-step__index">02</span>
+            <i class="fa-solid fa-table-cells-large"></i>
+            <span class="timeline-step__label">Wireframe</span>
+          </button>
+          <i class="fa-solid fa-arrow-right timeline-connector" aria-hidden="true"></i>
+          <button class="timeline-step" type="button" data-modal-title="Mockup" data-modal-template="#tpl-construction-mockup">
+            <span class="timeline-step__index">03</span>
+            <i class="fa-solid fa-image"></i>
+            <span class="timeline-step__label">Mockup</span>
+          </button>
+          <i class="fa-solid fa-arrow-right timeline-connector" aria-hidden="true"></i>
+          <button class="timeline-step" type="button" data-modal-title="Prototipo interactivo" data-modal-template="#tpl-construction-prototype">
+            <span class="timeline-step__index">04</span>
+            <i class="fa-solid fa-play"></i>
+            <span class="timeline-step__label">Prototipo interactivo</span>
+          </button>
+        </div>
       </div>
+
+      <template id="tpl-construction-sketch">
+        <div class="flow-meta">
+          <span class="flow-meta__item"><i class="fa-solid fa-gauge-simple"></i>Fidelidad: muy baja</span>
+          <span class="flow-meta__item"><i class="fa-solid fa-clock"></i>Minutos</span>
+        </div>
+        <div class="sketch-preview">
+          <svg viewBox="0 0 200 80" width="100%" height="80">
+            <rect x="6" y="6" width="188" height="68" rx="4" fill="none" stroke="var(--text-dim)" stroke-width="1.5" stroke-dasharray="4 4"></rect>
+            <path d="M16 50 Q 30 20, 50 45 T 90 35" fill="none" stroke="var(--accent)" stroke-width="2"></path>
+            <rect x="110" y="20" width="70" height="14" rx="2" fill="none" stroke="var(--text-dim)" stroke-width="1.5"></rect>
+            <rect x="110" y="42" width="40" height="14" rx="2" fill="none" stroke="var(--text-dim)" stroke-width="1.5"></rect>
+          </svg>
+        </div>
+        <p>Boceto rápido a mano (o digital sin pulir) para explorar varias ideas de layout sin comprometerse con ninguna — se descarta casi todo, y eso es parte del valor: explorar barato antes de decidir.</p>
+      </template>
+
+      <template id="tpl-construction-wireframe">
+        <div class="flow-meta">
+          <span class="flow-meta__item"><i class="fa-solid fa-gauge-simple"></i>Fidelidad: baja</span>
+          <span class="flow-meta__item"><i class="fa-solid fa-clock"></i>Horas</span>
+        </div>
+        <div class="wireframe-preview">
+          <span class="wireframe-block wireframe-block--wide"></span>
+          <span class="wireframe-block"></span>
+          <span class="wireframe-block"></span>
+          <span class="wireframe-block wireframe-block--text"></span>
+          <span class="wireframe-block wireframe-block--text"></span>
+        </div>
+        <p>Ya hay una decisión de layout: jerarquía, posición de bloques y proporciones de contenido — sin color, tipografía final ni imágenes reales, para discutir estructura sin distraerse con estética.</p>
+      </template>
+
+      <template id="tpl-construction-mockup">
+        <div class="flow-meta">
+          <span class="flow-meta__item"><i class="fa-solid fa-gauge-simple"></i>Fidelidad: alta</span>
+          <span class="flow-meta__item"><i class="fa-solid fa-clock"></i>Días</span>
+        </div>
+        <div class="mockup-preview">
+          <span class="mockup-block" style="background: var(--accent);"></span>
+          <span class="mockup-block mockup-block--type">Aa</span>
+          <span class="mockup-block" style="background: var(--surface-raised);"></span>
+        </div>
+        <p>El wireframe se viste con el sistema visual real: color, tipografía, iconografía y contenido final o casi-final — pantalla estática que ya se ve como producto terminado.</p>
+      </template>
+
+      <template id="tpl-construction-prototype">
+        <div class="flow-meta">
+          <span class="flow-meta__item"><i class="fa-solid fa-gauge-simple"></i>Fidelidad: alta</span>
+          <span class="flow-meta__item"><i class="fa-solid fa-link"></i>Mockups enlazados</span>
+        </div>
+        <div class="prototype-preview">
+          <span class="mockup-block mockup-block--small" style="background: var(--accent);"></span>
+          <i class="fa-solid fa-arrow-right prototype-arrow"></i>
+          <span class="mockup-block mockup-block--small" style="background: var(--surface-raised);"></span>
+          <i class="fa-solid fa-arrow-right prototype-arrow"></i>
+          <span class="mockup-block mockup-block--small mockup-block--final"><i class="fa-solid fa-check"></i></span>
+        </div>
+        <p>Mockups enlazados que simulan navegación e interacción real — la etapa donde se valida el flujo completo con usuarios o stakeholders antes de pasar a desarrollo.</p>
+      </template>
     </div>
   </section>
 
@@ -2512,10 +2593,145 @@
     font-size: 0.68rem;
   }
 
-  /* Inline placeholder callout (e.g. cronología de construcción) */
-  .view-placeholder--inline {
-    margin-top: 1.25rem;
-    padding: 2rem 1rem;
+  /* Cronología de construcción — horizontal scroll timeline with modal steps */
+  .construction-timeline-block {
+    margin-top: 1.75rem;
+  }
+
+  .construction-timeline-block h3 {
+    margin: 0 0 0.4rem;
+  }
+
+  .construction-timeline__intro {
+    margin: 0 0 1.1rem;
+    color: var(--text-dim);
+    font-size: 0.88rem;
+  }
+
+  .construction-timeline {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    overflow-x: auto;
+    padding: 0.3rem 0.2rem 0.7rem;
+    scroll-snap-type: x proximity;
+  }
+
+  .timeline-step {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    width: 7.5rem;
+    padding: 1rem 0.8rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    color: var(--text);
+    cursor: pointer;
+    transition: border-color var(--transition), transform var(--transition);
+  }
+
+  .timeline-step:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  .timeline-step:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  .timeline-step__index {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  .timeline-step i:not(.timeline-step__index) {
+    font-size: 1.1rem;
+    color: var(--accent);
+  }
+
+  .timeline-step__label {
+    font-size: 0.84rem;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .timeline-connector {
+    flex: 0 0 auto;
+    color: var(--text-dim);
+    font-size: 0.85rem;
+  }
+
+  .sketch-preview,
+  .wireframe-preview,
+  .mockup-preview,
+  .prototype-preview {
+    margin-bottom: 1rem;
+  }
+
+  .wireframe-preview,
+  .mockup-preview,
+  .prototype-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .wireframe-block {
+    flex: 1 1 calc(50% - 0.5rem);
+    height: 1.8rem;
+    border: 1.5px solid var(--text-dim);
+    border-radius: 4px;
+    background: var(--surface-raised);
+  }
+
+  .wireframe-block--wide {
+    flex-basis: 100%;
+    height: 1.2rem;
+  }
+
+  .wireframe-block--text {
+    height: 0.9rem;
+    opacity: 0.6;
+  }
+
+  .mockup-block {
+    flex: 1 1 calc(33.33% - 0.5rem);
+    height: 3rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mockup-block--type {
+    background: var(--surface-raised);
+    font-family: Georgia, serif;
+    font-size: 1.1rem;
+    color: var(--text);
+  }
+
+  .mockup-block--small {
+    flex: 0 0 3.4rem;
+    height: 3.4rem;
+  }
+
+  .mockup-block--final {
+    color: var(--bg);
+  }
+
+  .prototype-preview {
+    align-items: center;
+  }
+
+  .prototype-arrow {
+    color: var(--text-dim);
   }
 
   /* Entregables de UI / sistema de diseño — modal examples */
