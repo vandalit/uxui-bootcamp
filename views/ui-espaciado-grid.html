@@ -1,0 +1,192 @@
+<section class="subview">
+  <header class="subview-header">
+    <i class="fa-solid fa-border-all"></i>
+    <div>
+      <h2>Espaciado y grid systems</h2>
+      <p>
+        El sistema invisible que da ritmo y alineación consistente a una
+        interfaz — la diferencia entre algo que "se ve ordenado" sin saber
+        explicar por qué, y un desorden de elementos sueltos.
+      </p>
+    </div>
+  </header>
+
+  <div class="concept-grid">
+    <article class="concept-card">
+      <i class="fa-solid fa-ruler"></i>
+      <h4>Sistema de 8pt</h4>
+      <p>Todo espaciado (padding, margin, gaps) es múltiplo de 8px (8, 16, 24, 32...) — reduce decisiones arbitrarias y da consistencia automática.</p>
+    </article>
+
+    <article class="concept-card">
+      <i class="fa-solid fa-table-columns"></i>
+      <h4>Grid de columnas</h4>
+      <p>Una cuadrícula invisible (ej. 12 columnas) sobre la que se alinean los elementos, en vez de posicionarlos a ojo.</p>
+    </article>
+
+    <article class="concept-card">
+      <i class="fa-solid fa-grip-lines-vertical"></i>
+      <h4>Gutters y márgenes</h4>
+      <p>El espacio entre columnas (gutter) y el espacio entre el contenido y el borde de la pantalla (margen) — ambos definidos, no improvisados.</p>
+    </article>
+
+    <article class="concept-card">
+      <i class="fa-solid fa-box"></i>
+      <h4>Padding vs. margin</h4>
+      <p>Padding es espacio interno de un elemento; margin es espacio externo, entre un elemento y los que lo rodean. Confundirlos rompe el ritmo del layout.</p>
+    </article>
+
+    <article class="concept-card">
+      <i class="fa-solid fa-arrows-left-right-to-line"></i>
+      <h4>Alineación</h4>
+      <p>Elementos alineados a un mismo eje (izquierda, centro, una línea de grid) se perciben como relacionados, aunque no comparen color ni tamaño.</p>
+    </article>
+
+    <article class="concept-card">
+      <i class="fa-solid fa-bars-staggered"></i>
+      <h4>Ritmo vertical</h4>
+      <p>Espaciado consistente entre bloques de contenido a lo largo de toda la página, para que el scroll se sienta predecible.</p>
+    </article>
+  </div>
+
+  <div class="anatomy-block">
+    <h3>Anatomía de un grid de 12 columnas</h3>
+    <div class="grid-demo">
+      <div class="grid-demo__col grid-demo__col--span4">4 col</div>
+      <div class="grid-demo__col grid-demo__col--span8">8 col</div>
+      <div class="grid-demo__col grid-demo__col--span6">6 col</div>
+      <div class="grid-demo__col grid-demo__col--span6">6 col</div>
+      <div class="grid-demo__col grid-demo__col--span12">12 col</div>
+    </div>
+    <p class="anatomy-note">Cada bloque ocupa un número de columnas del total (12) y respeta el mismo gutter — así un layout de 2 columnas y uno de 3 quedan alineados entre sí, sin medir nada a mano.</p>
+  </div>
+</section>
+
+<style>
+  .subview {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .subview-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .subview-header i {
+    font-size: 1.8rem;
+    color: var(--accent);
+    margin-top: 0.2rem;
+  }
+
+  .subview-header h2 {
+    margin: 0 0 0.4rem;
+  }
+
+  .subview-header p {
+    margin: 0;
+    color: var(--text-dim);
+  }
+
+  .concept-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .concept-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.2rem 1.3rem;
+  }
+
+  .concept-card i {
+    font-size: 1.1rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .concept-card h4 {
+    margin: 0 0 0.4rem;
+  }
+
+  .concept-card p {
+    margin: 0;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+  }
+
+  .anatomy-block {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.4rem 1.5rem;
+  }
+
+  .anatomy-block h3 {
+    margin: 0 0 1rem;
+  }
+
+  .grid-demo {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 0.5rem;
+  }
+
+  .grid-demo__col {
+    background: var(--surface-raised);
+    border: 1px dashed var(--accent);
+    border-radius: 6px;
+    padding: 0.8rem 0.5rem;
+    text-align: center;
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    font-family: "Courier New", monospace;
+  }
+
+  .grid-demo__col--span4 {
+    grid-column: span 4;
+  }
+
+  .grid-demo__col--span6 {
+    grid-column: span 6;
+  }
+
+  .grid-demo__col--span8 {
+    grid-column: span 8;
+  }
+
+  .grid-demo__col--span12 {
+    grid-column: span 12;
+  }
+
+  .anatomy-note {
+    margin: 1rem 0 0;
+    color: var(--text-dim);
+    font-size: 0.88rem;
+  }
+
+  @media (max-width: 680px) {
+    .concept-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .grid-demo {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .grid-demo__col--span4 {
+      grid-column: span 2;
+    }
+
+    .grid-demo__col--span6,
+    .grid-demo__col--span8,
+    .grid-demo__col--span12 {
+      grid-column: span 4;
+    }
+  }
+</style>

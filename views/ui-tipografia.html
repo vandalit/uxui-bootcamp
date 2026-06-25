@@ -1,0 +1,209 @@
+<section class="subview">
+  <header class="subview-header">
+    <i class="fa-solid fa-font"></i>
+    <div>
+      <h2>Tipografía</h2>
+      <p>
+        Las decisiones de letra que sostienen legibilidad y jerarquía en toda
+        la interfaz — no solo "elegir una fuente bonita".
+      </p>
+    </div>
+  </header>
+
+  <div class="concept-grid">
+    <article class="concept-card">
+      <i class="fa-solid fa-i-cursor"></i>
+      <h4>Familia tipográfica</h4>
+      <p>El set de letras elegido — idealmente máximo 1-2 familias por producto, para mantener consistencia y tiempos de carga razonables.</p>
+    </article>
+
+    <article class="concept-card">
+      <i class="fa-solid fa-ruler-vertical"></i>
+      <h4>Escala tipográfica</h4>
+      <p>Una progresión de tamaños predefinida (ej. 12/14/16/20/24/32px) en vez de elegir tamaños arbitrarios para cada texto nuevo.</p>
+    </article>
+
+    <article class="concept-card">
+      <i class="fa-solid fa-weight-hanging"></i>
+      <h4>Peso (weight)</h4>
+      <p>Regular, medium, bold — variaciones de grosor de una misma familia, usadas para crear jerarquía sin cambiar de tamaño.</p>
+    </article>
+
+    <article class="concept-card">
+      <i class="fa-solid fa-arrows-up-down"></i>
+      <h4>Interlineado</h4>
+      <p>El espacio vertical entre líneas (<code>line-height</code>). Muy ajustado dificulta la lectura; muy abierto desconecta visualmente el párrafo.</p>
+    </article>
+
+    <article class="concept-card">
+      <i class="fa-solid fa-text-width"></i>
+      <h4>Tracking / letter-spacing</h4>
+      <p>El espacio horizontal entre letras. Útil en mayúsculas pequeñas (ej. etiquetas) para que no se vean apretadas.</p>
+    </article>
+
+    <article class="concept-card">
+      <i class="fa-solid fa-eye"></i>
+      <h4>Legibilidad vs. decoración</h4>
+      <p>El cuerpo de texto prioriza legibilidad (tamaño, contraste, ancho de línea); los títulos pueden tomar más riesgo expresivo.</p>
+    </article>
+  </div>
+
+  <div class="anatomy-block">
+    <h3>Anatomía de una escala tipográfica</h3>
+    <div class="type-scale">
+      <div class="type-scale__row type-scale__row--display">Display <span>32px / 700</span></div>
+      <div class="type-scale__row type-scale__row--h1">Heading <span>24px / 600</span></div>
+      <div class="type-scale__row type-scale__row--h2">Subheading <span>18px / 600</span></div>
+      <div class="type-scale__row type-scale__row--body">Body text <span>16px / 400</span></div>
+      <div class="type-scale__row type-scale__row--caption">Caption <span>13px / 400</span></div>
+    </div>
+    <p class="anatomy-note">Cada nivel de la escala tiene un rol fijo: usar "Heading" para un título y nunca para un texto de apoyo mantiene la jerarquía predecible en toda la interfaz, sin decidir tamaños caso por caso.</p>
+  </div>
+</section>
+
+<style>
+  .subview {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .subview-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .subview-header i {
+    font-size: 1.8rem;
+    color: var(--accent);
+    margin-top: 0.2rem;
+  }
+
+  .subview-header h2 {
+    margin: 0 0 0.4rem;
+  }
+
+  .subview-header p {
+    margin: 0;
+    color: var(--text-dim);
+  }
+
+  .concept-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .concept-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.2rem 1.3rem;
+  }
+
+  .concept-card i {
+    font-size: 1.1rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .concept-card h4 {
+    margin: 0 0 0.4rem;
+  }
+
+  .concept-card p {
+    margin: 0;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+  }
+
+  .concept-card code {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.1rem 0.35rem;
+    font-size: 0.85em;
+    color: var(--text);
+  }
+
+  .anatomy-block {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.4rem 1.5rem;
+  }
+
+  .anatomy-block h3 {
+    margin: 0 0 1rem;
+  }
+
+  .type-scale {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+
+  .type-scale__row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    border-bottom: 1px dashed var(--border);
+    padding-bottom: 0.6rem;
+  }
+
+  .type-scale__row span {
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    font-family: "Courier New", monospace;
+    white-space: nowrap;
+  }
+
+  .type-scale__row--display {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  .type-scale__row--h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .type-scale__row--h2 {
+    font-size: 1.15rem;
+    font-weight: 600;
+  }
+
+  .type-scale__row--body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .type-scale__row--caption {
+    font-size: 0.82rem;
+    font-weight: 400;
+    color: var(--text-dim);
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .anatomy-note {
+    margin: 1rem 0 0;
+    color: var(--text-dim);
+    font-size: 0.88rem;
+  }
+
+  @media (max-width: 680px) {
+    .concept-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .type-scale__row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.2rem;
+    }
+  }
+</style>

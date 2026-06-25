@@ -1,0 +1,220 @@
+<section class="subview">
+  <header class="subview-header">
+    <i class="fa-solid fa-hand-pointer"></i>
+    <div>
+      <h2>Affordance y feedback visual</h2>
+      <p>
+        Las señales que le dicen al usuario qué puede hacer con un elemento,
+        y las que confirman qué ocurrió después de que lo hizo.
+      </p>
+    </div>
+  </header>
+
+  <div class="concept-grid">
+    <article class="concept-card">
+      <i class="fa-solid fa-hand"></i>
+      <h4>Affordance</h4>
+      <p>Una propiedad visual que sugiere cómo se usa algo — un botón con sombra y borde redondeado "parece" presionable, sin necesidad de explicarlo.</p>
+    </article>
+
+    <article class="concept-card">
+      <i class="fa-solid fa-arrow-pointer"></i>
+      <h4>Estados interactivos</h4>
+      <p><code>hover</code>, <code>active</code>, <code>focus</code> y <code>disabled</code> — cada uno comunica algo distinto sobre la disponibilidad de un elemento.</p>
+    </article>
+
+    <article class="concept-card">
+      <i class="fa-solid fa-wand-magic-sparkles"></i>
+      <h4>Microinteracciones</h4>
+      <p>Animaciones breves (un check que aparece, un botón que se hunde) que confirman que una acción fue recibida, sin interrumpir el flujo.</p>
+    </article>
+
+    <article class="concept-card">
+      <i class="fa-solid fa-spinner"></i>
+      <h4>Estados de carga</h4>
+      <p>Skeletons, spinners o barras de progreso comunican que algo está en proceso — evitan que el usuario piense que la interfaz se congeló.</p>
+    </article>
+
+    <article class="concept-card">
+      <i class="fa-solid fa-circle-check"></i>
+      <h4>Confirmación de acción</h4>
+      <p>Un mensaje, color o ícono que confirma que una acción se completó (guardar, enviar, eliminar) — sin confirmación, el usuario repite la acción por duda.</p>
+    </article>
+
+    <article class="concept-card">
+      <i class="fa-solid fa-i-cursor"></i>
+      <h4>Cursor</h4>
+      <p>El cambio de cursor (de flecha a mano) es una de las señales de affordance más antiguas y universales de la web — indica "esto se puede clickear".</p>
+    </article>
+  </div>
+
+  <div class="anatomy-block">
+    <h3>Anatomía de los estados de un botón</h3>
+    <div class="states-demo">
+      <div class="states-demo__item">
+        <button class="states-demo__btn" type="button">Guardar</button>
+        <span>Default</span>
+      </div>
+      <div class="states-demo__item">
+        <button class="states-demo__btn states-demo__btn--hover" type="button">Guardar</button>
+        <span>Hover</span>
+      </div>
+      <div class="states-demo__item">
+        <button class="states-demo__btn states-demo__btn--active" type="button">Guardar</button>
+        <span>Active</span>
+      </div>
+      <div class="states-demo__item">
+        <button class="states-demo__btn states-demo__btn--focus" type="button">Guardar</button>
+        <span>Focus</span>
+      </div>
+      <div class="states-demo__item">
+        <button class="states-demo__btn states-demo__btn--disabled" type="button" disabled>Guardar</button>
+        <span>Disabled</span>
+      </div>
+    </div>
+    <p class="anatomy-note">El mismo botón cambia ligeramente en cada estado — más oscuro en hover, hundido en active, con anillo visible en focus (clave para navegación por teclado), apagado y sin affordance en disabled.</p>
+  </div>
+</section>
+
+<style>
+  .subview {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .subview-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .subview-header i {
+    font-size: 1.8rem;
+    color: var(--accent);
+    margin-top: 0.2rem;
+  }
+
+  .subview-header h2 {
+    margin: 0 0 0.4rem;
+  }
+
+  .subview-header p {
+    margin: 0;
+    color: var(--text-dim);
+  }
+
+  .concept-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .concept-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.2rem 1.3rem;
+  }
+
+  .concept-card i {
+    font-size: 1.1rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .concept-card h4 {
+    margin: 0 0 0.4rem;
+  }
+
+  .concept-card p {
+    margin: 0;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+  }
+
+  .concept-card code {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.1rem 0.35rem;
+    font-size: 0.85em;
+    color: var(--text);
+  }
+
+  .anatomy-block {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.4rem 1.5rem;
+  }
+
+  .anatomy-block h3 {
+    margin: 0 0 1rem;
+  }
+
+  .states-demo {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .states-demo__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .states-demo__item span {
+    font-size: 0.78rem;
+    color: var(--text-dim);
+  }
+
+  .states-demo__btn {
+    background: var(--accent);
+    color: #0c0c0e;
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem 1.2rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .states-demo__btn--hover {
+    filter: brightness(0.88);
+  }
+
+  .states-demo__btn--active {
+    filter: brightness(0.75);
+    transform: translateY(1px);
+  }
+
+  .states-demo__btn--focus {
+    outline: 3px solid #7be0a0;
+    outline-offset: 2px;
+  }
+
+  .states-demo__btn--disabled {
+    background: var(--border);
+    color: var(--text-dim);
+    cursor: not-allowed;
+  }
+
+  .anatomy-note {
+    margin: 1rem 0 0;
+    color: var(--text-dim);
+    font-size: 0.88rem;
+  }
+
+  @media (max-width: 680px) {
+    .concept-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .states-demo {
+      gap: 1rem;
+    }
+  }
+</style>

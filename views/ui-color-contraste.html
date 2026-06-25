@@ -1,0 +1,202 @@
+<section class="subview">
+  <header class="subview-header">
+    <i class="fa-solid fa-droplet"></i>
+    <div>
+      <h2>Color y contraste</h2>
+      <p>
+        El color comunica significado y guía la atención — el contraste
+        determina si ese significado es legible y accesible para todos.
+      </p>
+    </div>
+  </header>
+
+  <div class="concept-grid">
+    <article class="concept-card">
+      <i class="fa-solid fa-palette"></i>
+      <h4>Paleta funcional</h4>
+      <p>Primario (marca/acción principal), secundario (apoyo) y neutros (texto, fondos, bordes) — cada color con un rol claro, no decorativo al azar.</p>
+    </article>
+
+    <article class="concept-card">
+      <i class="fa-solid fa-traffic-light"></i>
+      <h4>Color por estado</h4>
+      <p>Convenciones que el usuario ya espera: verde = éxito, rojo = error, amarillo = advertencia, azul = información.</p>
+    </article>
+
+    <article class="concept-card">
+      <i class="fa-solid fa-circle-half-stroke"></i>
+      <h4>Contraste WCAG</h4>
+      <p>Ratio mínimo de luminosidad entre texto y fondo — 4.5:1 para texto normal, 3:1 para texto grande, según el estándar AA.</p>
+    </article>
+
+    <article class="concept-card">
+      <i class="fa-solid fa-eye-low-vision"></i>
+      <h4>Daltonismo</h4>
+      <p>No depender solo del color para comunicar (ej. error). Sumar un ícono o texto para que la información no se pierda con baja percepción de color.</p>
+    </article>
+
+    <article class="concept-card">
+      <i class="fa-solid fa-moon"></i>
+      <h4>Modo claro / oscuro</h4>
+      <p>Cada color funcional necesita su versión en ambos modos — el contraste debe mantenerse válido en los dos, no solo en el que se diseñó primero.</p>
+    </article>
+
+    <article class="concept-card">
+      <i class="fa-solid fa-layer-group"></i>
+      <h4>Variables de color</h4>
+      <p>Nombrar colores por su rol (<code>--accent</code>, <code>--text-dim</code>) en vez de su valor (<code>#5865f2</code>) facilita cambiarlos sin tocar cada componente.</p>
+    </article>
+  </div>
+
+  <div class="anatomy-block">
+    <h3>Contraste suficiente vs. insuficiente</h3>
+    <div class="contrast-compare">
+      <div class="contrast-col contrast-col--ok">
+        <i class="fa-solid fa-check"></i>
+        <div class="contrast-sample contrast-sample--ok">Texto legible</div>
+        <p>Ratio ≈ 7:1 — cómodo de leer incluso con baja visión o en pantallas con brillo bajo.</p>
+      </div>
+      <div class="contrast-col contrast-col--bad">
+        <i class="fa-solid fa-xmark"></i>
+        <div class="contrast-sample contrast-sample--bad">Texto poco legible</div>
+        <p>Ratio ≈ 1.8:1 — falla el estándar AA; ilegible para buena parte de los usuarios.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .subview {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .subview-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .subview-header i {
+    font-size: 1.8rem;
+    color: var(--accent);
+    margin-top: 0.2rem;
+  }
+
+  .subview-header h2 {
+    margin: 0 0 0.4rem;
+  }
+
+  .subview-header p {
+    margin: 0;
+    color: var(--text-dim);
+  }
+
+  .concept-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .concept-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.2rem 1.3rem;
+  }
+
+  .concept-card i {
+    font-size: 1.1rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .concept-card h4 {
+    margin: 0 0 0.4rem;
+  }
+
+  .concept-card p {
+    margin: 0;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+  }
+
+  .concept-card code {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.1rem 0.35rem;
+    font-size: 0.85em;
+    color: var(--text);
+  }
+
+  .anatomy-block {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.4rem 1.5rem;
+  }
+
+  .anatomy-block h3 {
+    margin: 0 0 1rem;
+  }
+
+  .contrast-compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .contrast-col {
+    text-align: center;
+  }
+
+  .contrast-col i {
+    font-size: 1.1rem;
+    margin-bottom: 0.6rem;
+    display: block;
+  }
+
+  .contrast-col--ok i {
+    color: #7be0a0;
+  }
+
+  .contrast-col--bad i {
+    color: #ff6b6b;
+  }
+
+  .contrast-sample {
+    border-radius: var(--radius);
+    padding: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+  }
+
+  .contrast-sample--ok {
+    background: #1c2b22;
+    color: #d8ffe6;
+  }
+
+  .contrast-sample--bad {
+    background: #3a3a3d;
+    color: #5a5a5e;
+  }
+
+  .contrast-col p {
+    margin: 0;
+    color: var(--text-dim);
+    font-size: 0.85rem;
+  }
+
+  @media (max-width: 680px) {
+    .concept-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .contrast-compare {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
