@@ -1,0 +1,218 @@
+<section class="subview">
+  <header class="subview-header">
+    <i class="fa-solid fa-universal-access"></i>
+    <div>
+      <h2>Responsive y accesibilidad técnica</h2>
+      <p>
+        Que la interfaz se adapte a cualquier tamaño de pantalla y que cualquier
+        persona pueda usarla, incluyendo quienes navegan con teclado o con un
+        lector de pantalla.
+      </p>
+    </div>
+  </header>
+
+  <div class="concept-grid">
+    <article class="concept-card">
+      <i class="fa-solid fa-mobile-screen-button"></i>
+      <h4>Mobile-first</h4>
+      <p>Diseñar y maquetar primero para pantallas pequeñas, y agregar complejidad para pantallas grandes con media queries — en vez del camino inverso.</p>
+    </article>
+
+    <article class="concept-card">
+      <i class="fa-solid fa-ruler-combined"></i>
+      <h4>Unidades relativas</h4>
+      <p><code>%</code>, <code>rem</code>, <code>em</code>, <code>vw/vh</code> escalan según el contexto (tamaño de fuente raíz, viewport), a diferencia de <code>px</code>, que es fijo.</p>
+    </article>
+
+    <article class="concept-card">
+      <i class="fa-solid fa-universal-access"></i>
+      <h4>ARIA</h4>
+      <p>Atributos (<code>aria-label</code>, <code>aria-hidden</code>, <code>role</code>) que describen el propósito de un elemento a un lector de pantalla cuando el HTML semántico no basta.</p>
+    </article>
+
+    <article class="concept-card">
+      <i class="fa-solid fa-circle-half-stroke"></i>
+      <h4>Contraste de color</h4>
+      <p>Diferencia de luminosidad entre texto y fondo, medida en ratio (ej. 4.5:1 mínimo en WCAG AA) — sin suficiente contraste, el texto es difícil o imposible de leer.</p>
+    </article>
+
+    <article class="concept-card">
+      <i class="fa-solid fa-keyboard"></i>
+      <h4>Navegación por teclado</h4>
+      <p>Todo elemento interactivo debe poder alcanzarse con <code>Tab</code> y activarse con <code>Enter</code>/<code>Espacio</code>, con un foco visible que indique dónde se está.</p>
+    </article>
+
+    <article class="concept-card">
+      <i class="fa-solid fa-image"></i>
+      <h4>Texto alternativo</h4>
+      <p>El atributo <code>alt</code> describe una imagen para quien no puede verla — también permite que el contenido se entienda si la imagen no carga.</p>
+    </article>
+  </div>
+
+  <div class="anatomy-block">
+    <h3>Anatomía de un botón accesible</h3>
+    <div class="anatomy-code">
+      <span class="anatomy-part anatomy-part--tag">&lt;button</span><span class="anatomy-part anatomy-part--attr"> aria-label="Cerrar"</span><span class="anatomy-part anatomy-part--tag">&gt;</span><span class="anatomy-part anatomy-part--content">&times;</span><span class="anatomy-part anatomy-part--tag">&lt;/button&gt;</span>
+    </div>
+    <div class="anatomy-legend">
+      <span class="anatomy-legend__item"><span class="anatomy-dot anatomy-dot--tag"></span>Elemento nativo, ya enfocable con teclado</span>
+      <span class="anatomy-legend__item"><span class="anatomy-dot anatomy-dot--attr"></span>Describe el propósito para quien no ve el ícono</span>
+      <span class="anatomy-legend__item"><span class="anatomy-dot anatomy-dot--content"></span>Contenido visual (el símbolo &times;)</span>
+    </div>
+    <p class="anatomy-note">Un <code>&lt;button&gt;</code> nativo ya trae foco y activación por teclado gratis — el <code>aria-label</code> cubre lo que el ícono no comunica por sí solo a un lector de pantalla.</p>
+  </div>
+</section>
+
+<style>
+  .subview {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .subview-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .subview-header i {
+    font-size: 1.8rem;
+    color: var(--accent);
+    margin-top: 0.2rem;
+  }
+
+  .subview-header h2 {
+    margin: 0 0 0.4rem;
+  }
+
+  .subview-header p {
+    margin: 0;
+    color: var(--text-dim);
+  }
+
+  .concept-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .concept-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.2rem 1.3rem;
+  }
+
+  .concept-card i {
+    font-size: 1.1rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .concept-card h4 {
+    margin: 0 0 0.4rem;
+  }
+
+  .concept-card p {
+    margin: 0;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+  }
+
+  .concept-card code {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.1rem 0.35rem;
+    font-size: 0.85em;
+    color: var(--text);
+  }
+
+  .anatomy-block {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.4rem 1.5rem;
+  }
+
+  .anatomy-block h3 {
+    margin: 0 0 1rem;
+  }
+
+  .anatomy-code {
+    font-family: "Courier New", monospace;
+    font-size: 1.05rem;
+    overflow-x: auto;
+    white-space: pre;
+    padding: 0.75rem 0;
+  }
+
+  .anatomy-part--tag {
+    color: var(--accent);
+  }
+
+  .anatomy-part--attr {
+    color: #ffb45a;
+  }
+
+  .anatomy-part--content {
+    color: #7be0a0;
+  }
+
+  .anatomy-legend {
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+  }
+
+  .anatomy-legend__item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+  }
+
+  .anatomy-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .anatomy-dot--tag {
+    background: var(--accent);
+  }
+
+  .anatomy-dot--attr {
+    background: #ffb45a;
+  }
+
+  .anatomy-dot--content {
+    background: #7be0a0;
+  }
+
+  .anatomy-note {
+    margin: 0.75rem 0 0;
+    color: var(--text-dim);
+    font-size: 0.88rem;
+  }
+
+  .anatomy-note code {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.1rem 0.35rem;
+    font-size: 0.85em;
+    color: var(--text);
+  }
+
+  @media (max-width: 680px) {
+    .concept-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

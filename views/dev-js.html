@@ -1,0 +1,218 @@
+<section class="subview">
+  <header class="subview-header">
+    <i class="fa-solid fa-bolt"></i>
+    <div>
+      <h2>JavaScript — lo básico</h2>
+      <p>
+        El lenguaje que hace interactiva una interfaz — reacciona a lo que hace el
+        usuario y actualiza lo que ve, sin tocar la estructura (HTML) ni la
+        apariencia (CSS) por sí mismo.
+      </p>
+    </div>
+  </header>
+
+  <div class="concept-grid">
+    <article class="concept-card">
+      <i class="fa-solid fa-hand-pointer"></i>
+      <h4>Eventos</h4>
+      <p>El navegador "escucha" interacciones del usuario — <code>click</code>, <code>scroll</code>, <code>input</code>, <code>submit</code> — y dispara código en respuesta. Todo empieza con un evento.</p>
+    </article>
+
+    <article class="concept-card">
+      <i class="fa-solid fa-database"></i>
+      <h4>Estado</h4>
+      <p>Los datos que cambian con el tiempo — un filtro activo, un carrito de compras, una pestaña seleccionada. La interfaz se redibuja cuando el estado cambia.</p>
+    </article>
+
+    <article class="concept-card">
+      <i class="fa-solid fa-code-branch"></i>
+      <h4>Condicionales</h4>
+      <p><code>if / else</code>: mostrar, ocultar o cambiar algo según una condición — por ejemplo, validar un campo antes de enviar un formulario.</p>
+    </article>
+
+    <article class="concept-card">
+      <i class="fa-solid fa-cube"></i>
+      <h4>Funciones</h4>
+      <p>Bloques de código reutilizable que se ejecutan en respuesta a un evento o un cambio de estado, en vez de repetir la misma lógica una y otra vez.</p>
+    </article>
+
+    <article class="concept-card">
+      <i class="fa-solid fa-sitemap"></i>
+      <h4>DOM</h4>
+      <p>El <em>Document Object Model</em>: la representación en memoria del HTML que JS puede leer y modificar — agregar o quitar elementos, cambiar texto, alternar clases.</p>
+    </article>
+
+    <article class="concept-card">
+      <i class="fa-solid fa-cloud-arrow-down"></i>
+      <h4>Asíncronía</h4>
+      <p>Pedir datos a un servidor (<code>fetch</code>) sin congelar ni recargar la página — justo lo que hace este mismo dashboard al cambiar de pestaña o cargar una vista.</p>
+    </article>
+  </div>
+
+  <div class="anatomy-block">
+    <h3>Anatomía de un event listener</h3>
+    <div class="anatomy-code">
+      <span class="anatomy-part anatomy-part--tag">boton</span><span class="anatomy-part anatomy-part--content">.addEventListener(</span><span class="anatomy-part anatomy-part--attr">"click"</span><span class="anatomy-part anatomy-part--content">, </span><span class="anatomy-part anatomy-part--tag">callback</span><span class="anatomy-part anatomy-part--content">)</span>
+    </div>
+    <div class="anatomy-legend">
+      <span class="anatomy-legend__item"><span class="anatomy-dot anatomy-dot--tag"></span>Elemento y función a ejecutar</span>
+      <span class="anatomy-legend__item"><span class="anatomy-dot anatomy-dot--attr"></span>Evento que se escucha</span>
+      <span class="anatomy-legend__item"><span class="anatomy-dot anatomy-dot--content"></span>Sintaxis del método</span>
+    </div>
+    <p class="anatomy-note">Cuando ocurre el evento <code>"click"</code> sobre <code>boton</code>, el navegador ejecuta <code>callback</code> — ahí dentro se suele leer/actualizar el estado y modificar el DOM.</p>
+  </div>
+</section>
+
+<style>
+  .subview {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .subview-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .subview-header i {
+    font-size: 1.8rem;
+    color: var(--accent);
+    margin-top: 0.2rem;
+  }
+
+  .subview-header h2 {
+    margin: 0 0 0.4rem;
+  }
+
+  .subview-header p {
+    margin: 0;
+    color: var(--text-dim);
+  }
+
+  .concept-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .concept-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.2rem 1.3rem;
+  }
+
+  .concept-card i {
+    font-size: 1.1rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .concept-card h4 {
+    margin: 0 0 0.4rem;
+  }
+
+  .concept-card p {
+    margin: 0;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+  }
+
+  .concept-card code {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.1rem 0.35rem;
+    font-size: 0.85em;
+    color: var(--text);
+  }
+
+  .anatomy-block {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.4rem 1.5rem;
+  }
+
+  .anatomy-block h3 {
+    margin: 0 0 1rem;
+  }
+
+  .anatomy-code {
+    font-family: "Courier New", monospace;
+    font-size: 1.05rem;
+    overflow-x: auto;
+    white-space: pre;
+    padding: 0.75rem 0;
+  }
+
+  .anatomy-part--tag {
+    color: var(--accent);
+  }
+
+  .anatomy-part--attr {
+    color: #ffb45a;
+  }
+
+  .anatomy-part--content {
+    color: #7be0a0;
+  }
+
+  .anatomy-legend {
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+  }
+
+  .anatomy-legend__item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+  }
+
+  .anatomy-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .anatomy-dot--tag {
+    background: var(--accent);
+  }
+
+  .anatomy-dot--attr {
+    background: #ffb45a;
+  }
+
+  .anatomy-dot--content {
+    background: #7be0a0;
+  }
+
+  .anatomy-note {
+    margin: 0.75rem 0 0;
+    color: var(--text-dim);
+    font-size: 0.88rem;
+  }
+
+  .anatomy-note code {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.1rem 0.35rem;
+    font-size: 0.85em;
+    color: var(--text);
+  }
+
+  @media (max-width: 680px) {
+    .concept-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

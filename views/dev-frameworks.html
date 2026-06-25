@@ -1,0 +1,202 @@
+<section class="subview">
+  <header class="subview-header">
+    <i class="fa-brands fa-bootstrap"></i>
+    <div>
+      <h2>Frameworks — lo básico</h2>
+      <p>
+        Conjuntos de CSS y componentes ya construidos (grid, botones, formularios,
+        navegación) sobre los que se construye más rápido — a cambio de menos control
+        fino sobre el detalle visual.
+      </p>
+    </div>
+  </header>
+
+  <div class="concept-grid">
+    <article class="concept-card">
+      <i class="fa-solid fa-table-cells"></i>
+      <h4>Grid de columnas</h4>
+      <p>Sistema de 12 columnas (o similar) con clases como <code>col-6</code> o <code>col-md-4</code> para repartir el ancho sin calcular porcentajes a mano.</p>
+    </article>
+
+    <article class="concept-card">
+      <i class="fa-solid fa-tags"></i>
+      <h4>Clases utilitarias</h4>
+      <p>Clases pequeñas y reutilizables que aplican un solo estilo — <code>mt-3</code> (margen superior), <code>text-center</code>, <code>d-flex</code> — en vez de escribir CSS propio para cada caso.</p>
+    </article>
+
+    <article class="concept-card">
+      <i class="fa-solid fa-puzzle-piece"></i>
+      <h4>Componentes listos</h4>
+      <p>Botones, tarjetas, modales, navbars y formularios ya diseñados y funcionales — se usan agregando una clase, sin escribir el componente desde cero.</p>
+    </article>
+
+    <article class="concept-card">
+      <i class="fa-solid fa-scale-balanced"></i>
+      <h4>Velocidad vs. control</h4>
+      <p>Un framework acelera el desarrollo y da consistencia de fábrica, pero personalizar a fondo el detalle visual suele requerir sobrescribir sus estilos por defecto.</p>
+    </article>
+
+    <article class="concept-card">
+      <i class="fa-solid fa-layer-group"></i>
+      <h4>Otros ejemplos</h4>
+      <p>Bootstrap es el más conocido, pero existen otros enfoques: Tailwind CSS (solo utilitarias, sin componentes visuales propios), Material UI, Bulma.</p>
+    </article>
+
+    <article class="concept-card">
+      <i class="fa-solid fa-mobile-screen"></i>
+      <h4>Responsive de fábrica</h4>
+      <p>La mayoría de los frameworks ya incluyen breakpoints y comportamiento adaptable a distintos tamaños de pantalla, sin escribir media queries propias.</p>
+    </article>
+  </div>
+
+  <div class="anatomy-block">
+    <h3>El mismo botón: CSS propio vs. clases utilitarias</h3>
+    <div class="framework-compare">
+      <div class="framework-col">
+        <h5>CSS propio</h5>
+        <div class="anatomy-code">
+          <span class="anatomy-part anatomy-part--tag">.btn-primario</span><span class="anatomy-part anatomy-part--content"> { </span><br>
+          <span class="anatomy-part anatomy-part--content">&nbsp;&nbsp;background</span><span class="anatomy-part anatomy-part--content">: </span><span class="anatomy-part anatomy-part--attr">#0d6efd</span><span class="anatomy-part anatomy-part--content">;</span><br>
+          <span class="anatomy-part anatomy-part--content">&nbsp;&nbsp;padding</span><span class="anatomy-part anatomy-part--content">: </span><span class="anatomy-part anatomy-part--attr">0.5rem 1rem</span><span class="anatomy-part anatomy-part--content">;</span><br>
+          <span class="anatomy-part anatomy-part--content">}</span>
+        </div>
+        <p class="anatomy-note">Una regla nueva, escrita y mantenida a mano.</p>
+      </div>
+      <div class="framework-col">
+        <h5>Clases utilitarias</h5>
+        <div class="anatomy-code">
+          <span class="anatomy-part anatomy-part--tag">&lt;button</span><span class="anatomy-part anatomy-part--attr"> class="btn btn-primary"</span><span class="anatomy-part anatomy-part--tag">&gt;</span>
+        </div>
+        <p class="anatomy-note">Mismo resultado visual, sin escribir CSS propio — el estilo ya existe en el framework.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .subview {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .subview-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .subview-header i {
+    font-size: 1.8rem;
+    color: var(--accent);
+    margin-top: 0.2rem;
+  }
+
+  .subview-header h2 {
+    margin: 0 0 0.4rem;
+  }
+
+  .subview-header p {
+    margin: 0;
+    color: var(--text-dim);
+  }
+
+  .concept-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .concept-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.2rem 1.3rem;
+  }
+
+  .concept-card i {
+    font-size: 1.1rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .concept-card h4 {
+    margin: 0 0 0.4rem;
+  }
+
+  .concept-card p {
+    margin: 0;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+  }
+
+  .concept-card code {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.1rem 0.35rem;
+    font-size: 0.85em;
+    color: var(--text);
+  }
+
+  .anatomy-block {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.4rem 1.5rem;
+  }
+
+  .anatomy-block h3 {
+    margin: 0 0 1rem;
+  }
+
+  .framework-compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .framework-col h5 {
+    margin: 0 0 0.5rem;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+  }
+
+  .anatomy-code {
+    font-family: "Courier New", monospace;
+    font-size: 1.05rem;
+    overflow-x: auto;
+    white-space: pre;
+    padding: 0.75rem 0;
+    line-height: 1.6;
+  }
+
+  .anatomy-part--tag {
+    color: var(--accent);
+  }
+
+  .anatomy-part--attr {
+    color: #ffb45a;
+  }
+
+  .anatomy-part--content {
+    color: #7be0a0;
+  }
+
+  .anatomy-note {
+    margin: 0.75rem 0 0;
+    color: var(--text-dim);
+    font-size: 0.88rem;
+  }
+
+  @media (max-width: 680px) {
+    .concept-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .framework-compare {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
