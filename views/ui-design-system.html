@@ -1,0 +1,384 @@
+<section class="subview">
+  <header class="subview-header">
+    <i class="fa-solid fa-cubes"></i>
+    <div>
+      <h2>Design system</h2>
+      <p>
+        No es un archivo ni un entregable más — es la relación viva entre
+        tokens, componentes, documentación y reglas de gobernanza que
+        mantiene a diseño y código hablando el mismo idioma en el tiempo.
+      </p>
+    </div>
+  </header>
+
+  <div class="concept-grid">
+    <article class="concept-card">
+      <i class="fa-solid fa-bullseye"></i>
+      <h4>Fuente única de verdad</h4>
+      <p>Diseño y desarrollo consumen los mismos componentes y valores — un botón cambia en un solo lugar y se actualiza en todos los productos que lo usan.</p>
+    </article>
+
+    <article class="concept-card">
+      <i class="fa-solid fa-tags"></i>
+      <h4>Design tokens</h4>
+      <p>La capa más atómica: color, tipografía, espaciado y radios nombrados como variables (<code>--color-accent</code>) en vez de valores sueltos repetidos.</p>
+    </article>
+
+    <article class="concept-card">
+      <i class="fa-solid fa-shapes"></i>
+      <h4>Librería de componentes</h4>
+      <p>Piezas de UI versionadas y documentadas — no solo "cómo se ven", sino sus variantes, estados y props disponibles.</p>
+    </article>
+
+    <article class="concept-card">
+      <i class="fa-solid fa-book"></i>
+      <h4>Documentación y guidelines</h4>
+      <p>Reglas de uso, ejemplos correctos e incorrectos, principios de diseño — sin esto, cada equipo interpreta el sistema a su manera.</p>
+    </article>
+
+    <article class="concept-card">
+      <i class="fa-solid fa-gavel"></i>
+      <h4>Gobernanza y versionado</h4>
+      <p>Quién aprueba un componente nuevo, cómo se propone un cambio, y cómo se comunica un breaking change a todos los equipos que dependen del sistema.</p>
+    </article>
+
+    <article class="concept-card">
+      <i class="fa-solid fa-diagram-project"></i>
+      <h4>Escala multi-producto</h4>
+      <p>Un mismo sistema sirve a varios productos y equipos sin que cada uno reinvente sus propios botones, espaciados o paleta de color.</p>
+    </article>
+  </div>
+
+  <div class="anatomy-block">
+    <h3>Escalera de madurez: de moodboard a design system</h3>
+    <div class="maturity-ladder">
+      <span class="maturity-step">Moodboard</span>
+      <i class="fa-solid fa-arrow-right maturity-arrow"></i>
+      <span class="maturity-step">Style tile</span>
+      <i class="fa-solid fa-arrow-right maturity-arrow"></i>
+      <span class="maturity-step">Guía de estilo</span>
+      <i class="fa-solid fa-arrow-right maturity-arrow"></i>
+      <span class="maturity-step">UI kit</span>
+      <i class="fa-solid fa-arrow-right maturity-arrow"></i>
+      <span class="maturity-step maturity-step--final">Design system</span>
+    </div>
+    <p class="anatomy-note">Cada escalón no descarta al anterior: el design system absorbe el moodboard (dirección visual), la guía de estilo (reglas) y el UI kit (componentes), y les suma versionado y gobernanza para que sobrevivan al paso del tiempo y de las personas del equipo.</p>
+  </div>
+
+  <div class="anatomy-block">
+    <h3>Atomic Design como columna vertebral</h3>
+    <div class="phase-grid">
+      <div class="phase-card">
+        <span class="phase-card__index">01</span>
+        <h5>Átomos</h5>
+        <div class="phase-chip-list">
+          <span class="phase-chip">Botón</span>
+          <span class="phase-chip">Input</span>
+          <span class="phase-chip">Label</span>
+        </div>
+      </div>
+
+      <div class="phase-card">
+        <span class="phase-card__index">02</span>
+        <h5>Moléculas</h5>
+        <div class="phase-chip-list">
+          <span class="phase-chip">Search bar</span>
+          <span class="phase-chip">Form group</span>
+        </div>
+      </div>
+
+      <div class="phase-card">
+        <span class="phase-card__index">03</span>
+        <h5>Organismos</h5>
+        <div class="phase-chip-list">
+          <span class="phase-chip">Navbar</span>
+          <span class="phase-chip">Tabla</span>
+        </div>
+      </div>
+
+      <div class="phase-card">
+        <span class="phase-card__index">04</span>
+        <h5>Templates</h5>
+        <div class="phase-chip-list">
+          <span class="phase-chip">Layout sin contenido real</span>
+        </div>
+      </div>
+
+      <div class="phase-card">
+        <span class="phase-card__index">05</span>
+        <h5>Páginas</h5>
+        <div class="phase-chip-list">
+          <span class="phase-chip">Instancia final con contenido real</span>
+        </div>
+      </div>
+    </div>
+    <p class="anatomy-note">El design system organiza sus componentes siguiendo esta misma jerarquía de menor a mayor complejidad — así cualquier persona del equipo sabe dónde "vive" cada pieza nueva antes de construirla.</p>
+  </div>
+
+  <div class="anatomy-block">
+    <h3>Design system en la práctica</h3>
+    <div class="dsystem-diagram">
+      <div class="dsystem-inputs">
+        <span class="sprint-chip">Tokens</span>
+        <span class="sprint-chip">UI kit</span>
+        <span class="sprint-chip">Guía de estilo</span>
+        <span class="sprint-chip">Documentación</span>
+      </div>
+      <i class="fa-solid fa-arrow-down dsystem-arrow"></i>
+      <span class="dsystem-hub">Design system</span>
+    </div>
+    <p class="anatomy-note-label">Herramientas reales que lo sostienen:</p>
+    <div class="tool-chip-list">
+      <span class="tool-chip"><i class="fa-brands fa-figma"></i>Figma (variables y component libraries)</span>
+      <span class="tool-chip"><i class="fa-solid fa-book-open"></i>Storybook</span>
+      <span class="tool-chip"><i class="fa-solid fa-cube"></i>Style Dictionary</span>
+      <span class="tool-chip"><i class="fa-solid fa-file-lines"></i>Zeroheight</span>
+    </div>
+  </div>
+</section>
+
+<style>
+  .subview {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .subview-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .subview-header i {
+    font-size: 1.8rem;
+    color: var(--accent);
+    margin-top: 0.2rem;
+  }
+
+  .subview-header h2 {
+    margin: 0 0 0.4rem;
+  }
+
+  .subview-header p {
+    margin: 0;
+    color: var(--text-dim);
+  }
+
+  .concept-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .concept-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.2rem 1.3rem;
+  }
+
+  .concept-card i {
+    font-size: 1.1rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .concept-card h4 {
+    margin: 0 0 0.4rem;
+  }
+
+  .concept-card p {
+    margin: 0;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+  }
+
+  .concept-card code {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.1rem 0.35rem;
+    font-size: 0.85em;
+    color: var(--text);
+  }
+
+  .anatomy-block {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.4rem 1.5rem;
+  }
+
+  .anatomy-block h3 {
+    margin: 0 0 1rem;
+  }
+
+  .anatomy-note {
+    margin: 1rem 0 0;
+    color: var(--text-dim);
+    font-size: 0.88rem;
+  }
+
+  .anatomy-note-label {
+    margin: 1.2rem 0 0.6rem;
+    color: var(--text-dim);
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  /* Maturity ladder */
+  .maturity-ladder {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+  }
+
+  .maturity-step {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    white-space: nowrap;
+  }
+
+  .maturity-step--final {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .maturity-arrow {
+    color: var(--text-dim);
+    font-size: 0.8rem;
+    flex-shrink: 0;
+  }
+
+  /* Atomic Design phase-grid (mirrors curriculum's shared pattern) */
+  .phase-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.9rem;
+  }
+
+  .phase-card {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem;
+    position: relative;
+  }
+
+  .phase-card__index {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+  }
+
+  .phase-card h5 {
+    margin: 0 0 0.6rem;
+    font-size: 0.92rem;
+  }
+
+  .phase-chip-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .phase-chip {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.25rem 0.6rem;
+    font-size: 0.74rem;
+    color: var(--text-dim);
+  }
+
+  /* Design system diagram (mirrors the deliverable modal's diagram) */
+  .dsystem-diagram {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .dsystem-inputs {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .sprint-chip {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.45rem 0.9rem;
+    font-size: 0.82rem;
+    color: var(--text-dim);
+  }
+
+  .dsystem-arrow {
+    color: var(--text-dim);
+  }
+
+  .dsystem-hub {
+    background: var(--accent-soft);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    border-radius: var(--radius);
+    padding: 0.7rem 1.6rem;
+    font-weight: 700;
+  }
+
+  .tool-chip-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tool-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.45rem 0.9rem;
+    font-size: 0.82rem;
+    color: var(--text-dim);
+  }
+
+  .tool-chip i {
+    color: var(--accent);
+  }
+
+  @media (max-width: 680px) {
+    .concept-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .phase-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .maturity-ladder {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .maturity-arrow {
+      transform: rotate(90deg);
+      align-self: center;
+    }
+  }
+</style>
