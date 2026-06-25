@@ -1,5 +1,255 @@
-<div class="view-placeholder">
-  <i class="fa-solid fa-diagram-project"></i>
-  <h2>Ecosistema organizacional</h2>
-  <p>Próximamente: dónde se ubica un UX dentro de los equipos y procesos de una organización.</p>
-</div>
+<section class="ecosystem">
+  <header class="ecosystem__intro">
+    <h1>Ecosistema organizacional</h1>
+    <p>Dónde se ubica un perfil UX/UI dentro de los equipos y procesos de una organización — los roles con los que vas a colaborar y cómo fluyen las decisiones entre ellos.</p>
+  </header>
+
+  <div class="ecosystem-block">
+    <h3>Organigrama y línea de mando</h3>
+    <p class="ecosystem-block__note">Toca cualquier rol para ver su detalle: qué hace, con quién trabaja y qué entrega.</p>
+
+    <div class="org-chart">
+      <div class="org-tier org-tier--solo">
+        <div class="org-node org-node--stakeholder" tabindex="0" role="button" data-modal-title="Stakeholder" data-modal-template="#tpl-role-stakeholder">
+          <i class="fa-solid fa-building-columns"></i>
+          <span>Stakeholder</span>
+        </div>
+      </div>
+
+      <i class="fa-solid fa-arrow-down org-connector"></i>
+
+      <div class="org-tier org-tier--solo">
+        <div class="org-node org-node--po" tabindex="0" role="button" data-modal-title="Product Owner" data-modal-template="#tpl-role-po">
+          <i class="fa-solid fa-clipboard-list"></i>
+          <span>Product Owner</span>
+        </div>
+      </div>
+
+      <i class="fa-solid fa-arrow-down org-connector"></i>
+
+      <div class="org-tier">
+        <div class="org-node" tabindex="0" role="button" data-modal-title="Jefe de Proyecto" data-modal-template="#tpl-role-pm">
+          <i class="fa-solid fa-diagram-project"></i>
+          <span>Jefe de Proyecto</span>
+        </div>
+        <div class="org-node" tabindex="0" role="button" data-modal-title="UX Designer" data-modal-template="#tpl-role-ux">
+          <i class="fa-solid fa-magnifying-glass-chart"></i>
+          <span>UX Designer</span>
+        </div>
+        <div class="org-node" tabindex="0" role="button" data-modal-title="UI Designer" data-modal-template="#tpl-role-ui">
+          <i class="fa-solid fa-pen-ruler"></i>
+          <span>UI Designer</span>
+        </div>
+      </div>
+
+      <i class="fa-solid fa-arrow-down org-connector"></i>
+
+      <div class="org-tier org-tier--solo">
+        <div class="org-node org-node--dev" tabindex="0" role="button" data-modal-title="Equipo de desarrollo" data-modal-template="#tpl-role-dev">
+          <i class="fa-solid fa-code"></i>
+          <span>Equipo de desarrollo</span>
+        </div>
+      </div>
+    </div>
+
+    <template id="tpl-role-stakeholder">
+      <p><strong>Quién es:</strong> inversionista, directivo o cliente con autoridad de decisión final sobre el producto.</p>
+      <p><strong>Qué le importa:</strong> retorno de inversión, riesgo y visión de negocio a largo plazo — no el detalle de implementación.</p>
+      <p><strong>Con quién habla:</strong> principalmente con el Product Owner. Rara vez participa en el día a día del equipo de diseño o desarrollo.</p>
+    </template>
+
+    <template id="tpl-role-po">
+      <p><strong>Quién es:</strong> la voz del negocio dentro del equipo — traduce la visión del stakeholder en un backlog priorizado.</p>
+      <p><strong>Qué hace:</strong> decide qué se construye y en qué orden, y valida que lo construido resuelva el problema de negocio.</p>
+      <p><strong>Con quién trabaja:</strong> Jefe de Proyecto (tiempos y recursos), UX (qué necesita el usuario), UI (cómo se ve), equipo de desarrollo (qué es viable construir).</p>
+    </template>
+
+    <template id="tpl-role-pm">
+      <p><strong>Quién es:</strong> coordina tiempos, recursos, riesgos y comunicación entre todos los roles del proyecto.</p>
+      <p><strong>Qué hace:</strong> planifica hitos, gestiona dependencias entre equipos y escala bloqueos — no decide <em>qué</em> se construye (eso es el Product Owner), sino <em>cómo y cuándo</em> se entrega.</p>
+      <p><strong>Cuándo aparece:</strong> rol frecuente en proyectos con múltiples equipos, agencias o clientes externos; en equipos pequeños, el Product Owner o un líder técnico puede absorber esta función.</p>
+    </template>
+
+    <template id="tpl-role-ux">
+      <p><strong>Quién es:</strong> responsable de investigación, arquitectura de información y validación con usuarios reales.</p>
+      <p><strong>Qué entrega:</strong> research, flujos (user flow, task flow), wireframes y prototipos de baja fidelidad.</p>
+      <p><strong>Con quién trabaja:</strong> de cerca con UI (entrega la estructura que UI viste visualmente) y con Product Owner (valida que la solución resuelve el problema priorizado).</p>
+    </template>
+
+    <template id="tpl-role-ui">
+      <p><strong>Quién es:</strong> responsable del diseño visual, el sistema de diseño y el prototipado de alta fidelidad.</p>
+      <p><strong>Qué entrega:</strong> mockups, design system (tokens, UI kit, documentación) y prototipos navegables listos para handoff.</p>
+      <p><strong>Con quién trabaja:</strong> recibe wireframes de UX y entrega especificaciones y tokens al equipo de desarrollo.</p>
+    </template>
+
+    <template id="tpl-role-dev">
+      <p><strong>Quién es:</strong> implementa la interfaz y la lógica del producto a partir de los entregables de UX/UI.</p>
+      <p><strong>Qué hace:</strong> valida la factibilidad técnica antes de comprometerse con un diseño, y construye lo acordado en el handoff.</p>
+      <p><strong>Con quién trabaja:</strong> recibe el handoff de UI (ver Módulo 2 · Desarrollo Web) y reporta avance al Jefe de Proyecto.</p>
+    </template>
+  </div>
+
+  <div class="ecosystem-block">
+    <h3>Flujo de trabajo típico</h3>
+    <div class="workflow-chain">
+      <span class="workflow-chip">Stakeholder define objetivo</span>
+      <i class="fa-solid fa-arrow-right workflow-arrow"></i>
+      <span class="workflow-chip">Product Owner prioriza</span>
+      <i class="fa-solid fa-arrow-right workflow-arrow"></i>
+      <span class="workflow-chip">Jefe de Proyecto planifica</span>
+      <i class="fa-solid fa-arrow-right workflow-arrow"></i>
+      <span class="workflow-chip">UX investiga y diseña el flujo</span>
+      <i class="fa-solid fa-arrow-right workflow-arrow"></i>
+      <span class="workflow-chip">UI viste la interfaz</span>
+      <i class="fa-solid fa-arrow-right workflow-arrow"></i>
+      <span class="workflow-chip">Desarrollo implementa</span>
+      <i class="fa-solid fa-rotate-left workflow-loop"></i>
+    </div>
+    <p class="ecosystem-block__note">El ciclo vuelve a validación con el stakeholder y se repite — la cadencia concreta de este ciclo (sprints, hitos, ceremonias ágiles) se cubre como una nota aparte, dedicada a proceso.</p>
+  </div>
+</section>
+
+<style>
+  .ecosystem {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .ecosystem__intro h1 {
+    margin: 0 0 0.4rem;
+  }
+
+  .ecosystem__intro p {
+    margin: 0;
+    color: var(--text-dim);
+  }
+
+  .ecosystem-block {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.4rem 1.5rem;
+  }
+
+  .ecosystem-block h3 {
+    margin: 0 0 0.5rem;
+  }
+
+  .ecosystem-block__note {
+    margin: 0.5rem 0 0;
+    color: var(--text-dim);
+    font-size: 0.88rem;
+  }
+
+  /* Org chart */
+  .org-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7rem;
+    margin-top: 1.2rem;
+  }
+
+  .org-tier {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .org-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    min-width: 9rem;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface-raised);
+    color: var(--text);
+    font-size: 0.86rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: border-color var(--transition), transform var(--transition);
+  }
+
+  .org-node:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  .org-node:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  .org-node i {
+    font-size: 1.2rem;
+    color: var(--accent);
+  }
+
+  .org-node--stakeholder,
+  .org-node--po {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+  }
+
+  .org-connector {
+    color: var(--text-dim);
+    font-size: 0.85rem;
+  }
+
+  /* Workflow chain */
+  .workflow-chain {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+  }
+
+  .workflow-chip {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.5rem 1rem;
+    font-size: 0.84rem;
+    color: var(--text-dim);
+    white-space: nowrap;
+  }
+
+  .workflow-arrow {
+    color: var(--text-dim);
+    font-size: 0.8rem;
+    flex-shrink: 0;
+  }
+
+  .workflow-loop {
+    color: var(--accent);
+    font-size: 1rem;
+    margin-left: 0.4rem;
+  }
+
+  @media (max-width: 680px) {
+    .org-node {
+      min-width: 7.5rem;
+      padding: 0.8rem 0.7rem;
+    }
+
+    .workflow-chain {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .workflow-arrow {
+      transform: rotate(90deg);
+      align-self: center;
+    }
+
+    .workflow-loop {
+      align-self: center;
+      margin-left: 0;
+    }
+  }
+</style>
